@@ -1,10 +1,12 @@
 {
+  "homepage": "https://senyqy.github.io/ownery",
   "name": "new__template",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,7 @@
   "devDependencies": {
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
+    "gh-pages": "^5.0.0",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-avif": "^1.1.1",
     "gulp-cheerio": "^1.0.0",
