@@ -1,0 +1,19 @@
+@mixin font-face($font-name, $font-name-local, $path, $weight: normal, $style: normal) {
+    @font-face {
+      font-family: quote($font-name);
+      src: local(quote(#{$font-name-local})), 
+      url(#{$path}.woff) format("woff"),
+      url(#{$path}.woff2) format("woff2"),
+      url(#{$path}.ttf) format("ttf"),
+      url(#{$path}.eot) format("eot");
+      font-weight: $weight;
+      font-style: $style;
+      font-display: swap;
+    }
+  }
+  
+@include font-face("OpenSans", "OpenSans-Light", "../fonts/OpenSans-Light", 300);
+@include font-face("OpenSans", "OpenSans-LightItalic", "../fonts/OpenSans-LightItalic", 300, "italic");
+@include font-face("OpenSans", "OpenSans-Regular", "../fonts/OpenSans-Regular", 400);
+@include font-face("OpenSans", "OpenSans-SemiBold", "../fonts/OpenSans-SemiBold", 600);
+@include font-face("OpenSans", "OpenSans-Bold", "../fonts/OpenSans-Bold", 700);

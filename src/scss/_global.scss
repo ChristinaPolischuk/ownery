@@ -1,0 +1,434 @@
+// Container
+.container {
+    max-width: ($containerWidth + $containerPadding) + px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 $containerSidePadding + px;
+
+    @media (max-width: $breakpoint1450) {
+        max-width: 1200px;
+    }
+
+    @media (max-width: $breakpoint992) {
+        max-width: 970px;
+    }
+
+    @media (max-width: $breakpoint768) {
+        max-width: 740px;
+    }
+
+    @media (max-width: $breakpoint480) {
+        max-width: none;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+// Body & Locked
+body {
+    font-family: $fontMain;
+    color: $textColor;
+    &.locked {
+        overflow: hidden;
+    }
+}
+
+a {
+    color: inherit;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+}
+
+// ========================== [ Logo styles ] ==========================
+.logo {
+    margin-right: 40px;
+}
+
+// ========================== [ Buttons styles ] ==========================
+.btn {
+    padding: 10px 15px;
+    background-color: $accentColor;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    &__dropdown {
+        position: relative;
+        padding-right: 30px;
+        &::after {
+            content: '';
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            width: 8px;
+            height: 8px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            border-radius: 2px;
+            transform: rotate(45deg);
+            transition: transform .3s;
+        }
+        &.is-opened::after {
+            transform: rotate(225deg);
+        }
+    }
+    &__filter-icon {
+        width: 12px;
+        height: 8px;
+        fill: #fff;
+    }
+    &--small {
+        font-size: 12px;
+    }
+}
+
+.btn-amazon {
+    padding: 10px 10px 10px 40px;
+    background-color: $accentColor;
+    background-image: url(../img/general/amazon-icon.png);
+    background-position: 10px 6px;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+}
+
+// ========================== [ Dropdown styles ] ==========================
+.dropdown {
+    position: relative;
+    z-index: 1;
+    &-menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+        width: max-content;
+        max-width: 290px;
+        max-height: 400px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        overflow: hidden;
+        .mCSB_container {
+            margin-right: 15px;
+        }
+        .mCSB_dragger_bar {
+            background-color: $accentColor !important;
+        }
+        &__item {
+            position: relative;
+            padding-right: 25px;
+            &.subdropdown {
+                cursor: pointer;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: 10px;
+                    top: 16px;
+                    width: 6px;
+                    height: 6px;
+                    border-bottom: 2px solid $textColor;
+                    border-right: 2px solid $textColor;
+                    border-radius: 2px;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+        &__link {
+            padding: 10px;
+            display: block;
+            font-size: 14px;
+            line-height: 1.3;
+            position: relative;
+            transition: transform .3s;
+            &:hover {
+                transform: translateX(5px);
+            }
+        }
+    }
+    &-submenu {
+       display: none;
+    }
+}
+
+// ========================== [ Search form styles ] ==========================
+.search-form {
+    position: relative;
+    flex: 1;
+    &__field {
+        width: 100%;
+        height: 36px;
+        padding: 0 38px 0 15px;
+        border-radius: 4px;
+        outline: none;
+        &::placeholder {
+            font-size: 12px;
+            font-weight: 300;
+            font-style: italic;
+            color: $textColor;
+        }
+    }
+    &__btn {
+        padding: 0;
+        background-color: transparent;
+        position: absolute;
+        right: 9px;
+        top: 9px;
+        bottom: 9px;
+        &:hover .search-form__icon {
+            transform: scale(1.2);
+        }
+    }
+    &__icon {
+        width: 18px;
+        height: 18px;
+        fill: $accentColor;
+        transition: transform .3s;
+    }
+}
+
+// ========================== [ Categories styles ] ==========================
+.categories {
+    padding: 25px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    &__link {
+        padding: 10px 15px;
+        border: 1px solid $lightGrey;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: box-shadow .3s, transform .3s;
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+        }
+        &:active {
+            transform: scale(.9);
+        }
+        &.hidden {
+            display: none;
+        }
+    }
+}
+
+// ========================== [ Add more styles ] ==========================
+.add-more {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.more-info {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+// ========================== [ Filters styles ] ==========================
+.filters {
+    display: flex;
+    gap: 14px;
+    padding: 18px 0 24px;
+    border-top: 1px solid $mediumGrey;
+    border-bottom: 1px solid $mediumGrey;
+    &__link {
+        display: block;
+        padding: 12px 10px;
+        background-color: #fff;
+        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 300;
+        transition: box-shadow .3s, transform .3s;
+        &:hover {
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);;
+        }
+        &:active {
+            transform: scale(.9);
+        }
+        &--dropdown {
+            position: relative;
+            padding-right: 30px;
+            &::after {
+                content: '';
+                position: absolute;
+                right: 15px;
+                top: 14px;
+                width: 8px;
+                height: 8px;
+                border-bottom: 2px solid $textColor;
+                border-right: 2px solid $textColor;
+                border-radius: 2px;
+                transform: rotate(45deg);
+                transition: transform .3s;
+            }
+            &.is-opened::after {
+                transform: rotate(225deg);
+            }
+        }
+    }
+}
+
+// ========================== [ Products filter styles ] ==========================
+.products-filter {
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+    &__item {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    &__item + &__item {
+        margin-left: 10px;
+    }
+    &__text {
+        font-size: 12px;
+        font-weight: 300;
+    }
+    &__cancel {
+        padding: 0;
+        background-color: transparent;
+        &-icon {
+            margin-left: 3px;
+            width: 10px;
+            height: 10px;
+            fill: $redColor;
+        }
+    }
+}
+
+.products-range-slider {
+    width: 110px;
+    &__wrap {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    &__grid, &__grid-small {
+        fill: $accentColor;
+    }
+    &__grid {
+        width: 17px;
+        height: 17px;
+    }
+    &__grid-small {
+        width: 11px;
+        height: 11px;
+    }
+    .noUi-connect, .progress-bar {
+        background-color: $accentColor;
+    }
+    .noUi-handle {
+        cursor: grab;
+    }
+}
+
+// ========================== [ Products list styles ] ==========================
+.products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 30px;
+    &__item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: 1px solid $lightGrey;
+        border-radius: 4px;
+        transition: transform .3s, box-shadow .3s;
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+        }
+    }
+    &__badges {
+        position: absolute;
+        left: 0;
+        top: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    &__badge {
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 4px;
+        &-icon {
+            fill: #fff;
+            &.heart {
+                width: 10px;
+                height: 10px;
+            }
+            &.eye {
+                width: 14px;
+                height: 9px;
+            }
+        }
+        &-text {
+            font-size: 12px;
+            font-weight: 300;
+            color: #fff;
+        }
+    }
+    &__img {
+        margin-bottom: 10px;
+        text-align: center;
+        img {
+            max-width: 100%;
+        }
+    }
+    &__title {
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 1.37;
+        a {
+            border-bottom: 1px solid transparent;
+            transition: border-color .3s;
+        }
+        &:hover a {
+            border-color: $textColor;
+        }
+    }
+    &__price {
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    &__footer {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+}
+
+// Animations
+// Fade
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes print {
+    100% {
+        stroke-dashoffset: 312;
+    }
+}

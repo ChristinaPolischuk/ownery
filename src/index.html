@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- сайт не масштабируется -->
+    <!-- <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> -->
+
+
+    <title>Index</title>
+    <link rel="stylesheet" href="./css/libs.min.css">
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body class="main__body">
+    <div class="wrapper">
+        <!-- Header -->
+        @@include('./html/_header.html')
+        <!-- Main Page -->
+        <main class="main">
+            <div class="container">
+                @@include('./html/pages/index/_categories.html')
+                @@include('./html/pages/index/_filters.html')
+                @@include('./html/pages/index/_products.html')
+            </div>
+        </main>
+        <!-- Footer -->
+        @@include('./html/_footer.html')
+    </div>
+</body>
+
+<script src="./js/libs.min.js"></script>
+<script src="./js/scripts.min.js"></script>
+
+</html>
