@@ -51,7 +51,11 @@ a {
 
 // ========================== [ Logo styles ] ==========================
 .logo {
-    margin-right: 40px;
+    display: inline-flex;
+    img {
+        width: 150px;
+        height: 42px;
+    }
 }
 
 // ========================== [ Buttons styles ] ==========================
@@ -79,6 +83,14 @@ a {
         }
         &.is-opened::after {
             transform: rotate(225deg);
+        }
+    }
+    &__search {
+        background-color: transparent;
+        &-icon {
+            width: 18px;
+            height: 18px;
+            fill: $accentColor;
         }
     }
     &__filter-icon {
@@ -163,6 +175,7 @@ a {
 // ========================== [ Search form styles ] ==========================
 .search-form {
     position: relative;
+    z-index: 2;
     flex: 1;
     &__field {
         width: 100%;
@@ -193,6 +206,48 @@ a {
         height: 18px;
         fill: $accentColor;
         transition: transform .3s;
+    }
+    &__matches {
+        position: absolute;
+        top: 94%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 -6px 0 #fff, 0 1px 6px rgba(0,0,0, .25);
+        border-radius: 0 0 4px 4px;
+        &-link {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px 15px;
+            font-size: 12px;
+            line-height: 1.33;
+            transition: background-color .3s;
+            &:hover {
+                background-color: $mediumLightGrey;
+            }
+            &:first-child {
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    width: calc(100% - 30px);
+                    height: 1px;
+                    margin: 0 auto;
+                    background-color: $darkGrey;
+                }
+            }
+        }
+        &-text {
+            font-weight: 600;
+            color: $accentColor;
+        }
+        &-category {
+            font-weight: 300;
+        }
     }
 }
 
@@ -236,6 +291,7 @@ a {
 // ========================== [ Filters styles ] ==========================
 .filters {
     display: flex;
+    flex-wrap: wrap;
     gap: 14px;
     padding: 18px 0 24px;
     border-top: 1px solid $mediumGrey;
@@ -329,20 +385,34 @@ a {
     .noUi-connect, .progress-bar {
         background-color: $accentColor;
     }
+    &.noUi-horizontal .noUi-handle {
+        width: 24px;
+        right: -1px;
+    }
     .noUi-handle {
         cursor: grab;
+        &::before {
+            left: 9px;
+        }
+        &::after {
+            left: 14px;
+        }
     }
 }
 
 // ========================== [ Products list styles ] ==========================
 .products-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
-    grid-gap: 30px;
+    // grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    grid-template-columns: repeat(4, minmax(103px, 255px));
+    grid-gap: 1%;
+    justify-content: center;
+    padding-bottom: 54px;
     &__item {
         position: relative;
         display: flex;
         flex-direction: column;
+        // max-width: 255px;
         padding: 10px;
         border: 1px solid $lightGrey;
         border-radius: 4px;
@@ -408,9 +478,64 @@ a {
     &__footer {
         margin-top: auto;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
         gap: 10px;
+    }
+}
+
+// ========================== [ Pagination styles ] ==========================
+.pagination {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+    margin-left: auto;
+    margin-bottom: 45px;
+    padding: 8px;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    @media (max-width: $breakpoint576) {
+        margin-right: auto;
+    }
+    &__link {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 30px;
+        height: 26px;
+        background-color: $mediumLightGrey;
+        border-radius: 4px;
+        font-size: 12px;
+        transition: transform .3s, background-color .3s, color .3s;
+        &:not(.active, .pagination__arrow) {
+            @media (max-width: $breakpoint576) {
+                display: none;
+            }
+        }
+        &:hover, &.active {
+            transform: scale(1.3);
+            background-color: $accentColor;
+            color: #fff;
+            .pagination__arrow-icon {
+                fill: #fff;
+            }
+        }
+    }
+    &__arrow {
+        width: 42px;
+        &.arrow-prev {
+            margin-right: 20px;
+        }
+        &.arrow-next {
+            margin-left: 20px;
+        }
+        &-icon {
+            width: 16px;
+            height: 16px;   
+            fill: $textColor;
+            transition: fill .3s;
+        }
     }
 }
 
@@ -423,11 +548,5 @@ a {
 
     100% {
         opacity: 1;
-    }
-}
-
-@keyframes print {
-    100% {
-        stroke-dashoffset: 312;
     }
 }
