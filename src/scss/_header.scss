@@ -2,7 +2,9 @@
 .header {
     padding: 20px 0;
     background-color: $accentColor;
-
+    @media (max-width: $breakpoint768) {
+        padding: 15px 0;
+    }
     &.fixed {
         position: fixed;
         left: 0;
@@ -13,132 +15,125 @@
     .container {
         display: flex;
         align-items: center;
+        @media (max-width: $breakpoint768) {
+            flex-wrap: wrap;
+        }
     }
     &__logo {
         margin-right: 40px;
+        @media (max-width: $breakpoint768) {
+            order: 2;
+            img {
+                @media (max-width: $breakpoint768) {
+                    width: 70px;
+                    height: 20px;
+                }
+            }
+        }
     }
 }
 
 // ========================== [ Menu styles ] ==========================
 .menu {
-    display: flex;
-    gap: 30px;
-
-    // .menu__item
-    &__item {
-        display: flex;
-        position: relative;
+    margin-left: 16px;
+    @media (max-width: $breakpoint768) {
+        order: 1;
+        margin-left: 0;
+        margin-right: 10px;
     }
-
-    // .menu__item-link
-    &__item-link {
-        color: white;
-        display: flex;
-        position: relative;
-        transition: 0.5s color;
-        &:after {
-            position: absolute;
-            content: '';
-            left: 0;
-            bottom: -3px;
-            background: #131418;
-            height: 1px;
-            width: 100%;
-            transform: scale(0);
-            transition: 0.5s transform;
+    &.active {
+        .menu-nav {
+            transform: translateX(0);
         }
-        &:hover {
-            color: #131418;
-            &:after {
-                transform: scale(1);
+    }
+    &-nav {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        width: 300px;
+        max-height: 95vh;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+        transform: translateX(120%);
+        transition: transform .3s ease-in;
+        @media (max-width: $breakpoint768) {
+            right: auto;
+            left: 0;
+            transform: translateX(-120%);
+        }
+        &__header {
+            padding: 19px 10px;
+            height: 82px;
+            background-color: $accentColor;
+        }
+        &__body {
+            max-height: calc(95vh - 82px);
+            padding: 10px 0;
+            background-color: #fff;
+            border-radius: 0 0 4px 4px;
+        }
+        &__category:not(:last-child) {
+            border-bottom: 1px solid $mediumGrey;
+        }
+        &__title, &__link, &__text {
+            padding: 10px;
+        }
+        &__title a, &__link {
+            position: relative;
+            transition: transform .3s;
+            &:hover {
+                transform: translateX(5px);
             }
         }
-    }
-
-    // Mobile menu styles
-    @media screen and (max-width: $burgerBreakpoint) {
-        position: fixed;
-        background: $burgerColor;
-        left: 0;
-        top: 0;
-        height: 100vh;
-        width: 100vw;
-        display: none;
-
-        &.active {
-            display: flex;
-            left: 0;
-            top: 0;
-            height: 100vh;
-            width: 100vw;
-            flex-direction: column;
-            pointer-events: all;
-            justify-content: center;
-            align-items: center;
-            z-index: 2;
-            animation: fade 0.1s linear;
+        &__title {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.36;
+            a {
+                color: $accentColor;
+            }
+        }
+        &__link {
+            display: block;
+            font-size: 12px;
+            line-height: 1.33;
+            color: $accentColor;
+        }
+        &__text {
+            display: block;
+            font-size: 12px;
+            line-height: 1.33;
         }
     }
 }
 
 // ========================= [ Burger styles ] =========================
 .burger {
-    background: transparent;
-    z-index: 3;
-    display: flex;
-    position: relative;
-    height: 24px;
-    width: 30px;
-    margin-left: 20px;
-
-    &.active {
-        &::before {
-            background: $burgerActiveColor;
-            transform: rotate(45deg);
-            transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s transform;
-            top: 10px;
-        }
-
-        &::after {
-            background: $burgerActiveColor;
-            transform: rotate(-45deg);
-            bottom: 10px;
-            transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s transform;
-        }
-
-        & span {
-            transform: scale(0);
-        }
+    background-color: transparent;
+    &__icon {
+        width: 30px;
+        height: 22px;
+        stroke: #fff;
+        stroke-width: 4px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
     }
-
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        height: 4px;
-        width: 100%;
-        background: $burgerColor;
-        border-radius: 4px;
-        transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+}
+.burger-close {
+    position: absolute;
+    z-index: 1000;
+    right: calc(100% + 12px);
+    top: 26px;
+    background-color: transparent;
+    @media (max-width: $breakpoint768) {
+        left: calc(100% + 12px);
+        right: auto;
     }
-
-    &::before {
-        top: 0;
-    }
-
-    &::after {
-        bottom: 0;
-    }
-
-    span {
-        position: absolute;
-        top: 10px;
-        right: 0;
-        width: 100%;
-        background: $burgerColor;
-        height: 4px;
-        border-radius: 4px;
-        transform: scale(1);
-        transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+    &__icon {
+        width: 30px;
+        height: 30px;
+        fill: #fff;
     }
 }
