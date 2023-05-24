@@ -26,9 +26,20 @@ $(document).on("click", ".burger, .burger-close", function() {
                 enable:true
             }
         });
+        $(".modal__dialog-content").mCustomScrollbar({
+            axis:"y",
+            theme:"light-3",
+            scrollButtons:{
+                enable:true
+            }
+        });
     });
     
 })(jQuery);
+
+$(window).on('resize', function() {
+    $('.scrollable-content').mCustomScrollbar('update');
+});
 
 $(".js-dropdown").on("click", function(e) {
     e.preventDefault();
@@ -160,3 +171,14 @@ const getScrollbarWidth = () => {
 
     return scrollbarWidth;
 };
+
+$('.filter-form__select').select2({
+    width: "100%",
+});
+
+$(".accordion__header").on("click", function() {
+    $(this)
+        .parent().toggleClass("active")
+        .end()
+        .next().slideToggle(300)
+});

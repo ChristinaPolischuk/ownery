@@ -1,0 +1,87 @@
+// ************************ Модальное окно ************************ //
+.modal {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	transition: 0.2s;
+	&__inner {
+		height: 100%;
+		padding: 30px;
+	}
+	&.modal--active {
+		visibility: visible;
+		opacity: 1;
+		.simplebar-content {
+			animation-name: modal;
+			animation-duration: 1s;
+		}
+	}
+	&.modal--s .modal__dialog {
+		width: 300px;
+	}
+	&.modal--m .modal__dialog {
+		width: 600px;
+	}
+	&.modal--l .modal__dialog {
+		width: 900px;
+	}
+	&__dialog {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		max-width: 80vw;
+		width: 100%;
+		padding: 30px;
+		background-color: #fff;
+		border-radius: 8px;
+
+		&-close-btn {
+			cursor: pointer;
+			padding: 0;
+			border: none;
+			background-color: transparent;
+
+			position: absolute;
+			top: 5px;
+			right: 10px;
+			font-size: 30px;
+			font-weight: 700;
+		}
+	}
+	.simplebar-content-wrapper {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		perspective: 500px;
+	}
+	.simplebar-content {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: auto;
+		overflow-x: hidden;
+	}
+	.simplebar-track.simplebar-vertical {
+		width: 16px;
+		background-color: rgba(0, 0, 0, 0.7);
+		.simplebar-scrollbar::before {
+			background-color: #fff;
+			opacity: 1;
+		}
+	}
+}
+
+@keyframes modal {
+	from {
+		transform: translateY(-100%) rotateX(30deg);
+	}
+	to {
+		transform: translateY(0) rotateX(0deg);
+	}
+}

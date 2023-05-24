@@ -16,9 +16,9 @@ let path = {
     src: {
         html: [source_folder + '/*.html', '!' + source_folder + '/_*.html'],
         css: source_folder + '/scss/style.scss',
-        libsCss: [source_folder + '/js/libs/mCustomScrollbar/jquery.mCustomScrollbar.css', source_folder + '/js/libs/noUiSlider/nouislider.css'],
+        libsCss: [source_folder + '/js/libs/mCustomScrollbar/jquery.mCustomScrollbar.css', source_folder + '/js/libs/noUiSlider/nouislider.css', source_folder + '/js/libs/select2/select2.min.css'],
         js: source_folder + '/js/scripts.js',
-        libsJS: [source_folder + '/js/libs/jquery-3.7.0(lib).min.js', source_folder + '/js/libs/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js', source_folder + '/js/libs/noUiSlider/nouislider.js'],
+        libsJS: [source_folder + '/js/libs/jquery-3.7.0(lib).min.js', source_folder + '/js/libs/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js', source_folder + '/js/libs/noUiSlider/nouislider.js', source_folder + '/js/libs/select2/select2.min.js'],
         img: [`${source_folder}/img/**/*.+(png|jpg|jpeg|ico|svg|webp)`, `!${source_folder}/img/sprite/*.svg`],
         imgConvert: [`${source_folder}/img/**/*.*`, `!${source_folder}/img/**/*.svg`],
         libsImg: `${source_folder}/js/libs/mCustomScrollbar/mCSB_buttons.png`,

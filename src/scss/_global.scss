@@ -91,8 +91,13 @@ a {
             transform: rotate(45deg);
             transition: transform .3s;
         }
-        &.is-opened::after {
-            transform: rotate(225deg);
+        &.is-opened {
+            &::after {
+                transform: rotate(225deg);
+            }
+            & ~ .dropdown-menu {
+                display: block;
+            }
         }
     }
     &__search {
@@ -107,6 +112,13 @@ a {
         width: 12px;
         height: 8px;
         fill: #fff;
+    }
+    &__white {
+        padding: 10px 15px;
+        background-color: #fff;
+        color: $accentColor;
+        font-size: 12px;
+        border-radius: 4px;
     }
     &--small {
         font-size: 12px;
@@ -295,6 +307,175 @@ a {
             font-weight: 300;
         }
     }
+}
+
+// ========================== [ Accordion styles ] ==========================
+.accordion {
+    &__item + &__item {
+        margin-top: 15px;
+    }
+    &__item.active {
+        .accordion__header-icon {
+            transform: rotate(180deg);
+        }
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #fff;
+        cursor: pointer;
+        &-title {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        &-icon {
+            width: 6px;
+            height: 7px;
+            fill: #fff;
+            transition: transform .3s;
+        }
+    }
+    &__body {
+        padding: 10px 0;
+        display: none;
+    }
+}
+
+// ========================== [ Filter form styles ] ==========================
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    &__group {
+        display: flex;
+        flex-direction: column;
+        width: 47%;
+        @media (max-width: $breakpoint680) {
+            width: 100%;
+        }
+    }
+    &__label {
+        margin-bottom: 10px;
+        font-size: 12px;
+        font-weight: 700;
+    }
+}
+.filter-search-form {
+    flex: 1;
+    &__field {
+        width: 100%;
+        height: 36px;
+        padding: 0 15px;
+        border-radius: 4px;
+        &::placeholder {
+            font-size: 12px;
+            font-weight: 300;
+            font-style: italic;
+            color: $textColor;
+        }
+    }
+}
+
+// ========================== [ Filter categories styles ] ==========================
+.filter-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.filter-category {
+    &__title {
+        margin-bottom: 10px;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    &__link {
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.65);
+        border-radius: 4px;
+        transition: background-color .3s;
+        font-size: 12px;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+    }
+}
+
+// ========================== [ Filter clear styles ] ==========================
+.filter-clear {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    &__btn {
+        background-color: transparent;
+        line-height: 1;
+    }
+    &__icon {
+        width: 10px;
+        height: 10px;
+        fill: #fff;
+    }
+    &__text {
+        font-size: 12px;
+        font-weight: 300;
+    }
+}
+// ========================== [ select2 styles ] ==========================
+.select2-container--default .select2-selection--single {
+    height: 36px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    .select2-selection__rendered {
+        font-size: 12px;
+        line-height: 36px;
+        color: #fff;
+    }
+    .select2-selection__arrow {
+        height: 36px;
+    }
+}
+.select2-container--open .select2-selection--single {
+    background-color: #fff;
+    color: $textColor;
+}
+.select2-container--open .select2-selection--single .select2-selection__rendered{
+    color: $textColor;
+}
+.select2-search.select2-search--dropdown {
+    padding: 8px;
+}
+.select2-search__field {
+    height: 30px;
+    border-radius: 4px;
+    transition: border-color .3s;
+    &:focus {
+        outline: none;
+        border-color: $accentColor;
+    }
+}
+.select2-container--default .select2-results__option--selected {
+    background-color: $mediumLightGrey;
+}
+.select2-results__option {
+    padding: 8px;
+    font-size: 12px;
+    line-height: 16px;
+    transition: padding-left .3s, background-color .3s;
+}
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: $mediumLightGrey;
+    color: $textColor;
+    padding-left: 16px;
 }
 
 // ========================== [ Categories styles ] ==========================
@@ -594,55 +775,6 @@ a {
 }
 
 // ========================== [ Modal styles ] ==========================
-.modal__wrapper {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    display: none;
-
-    .modal {
-        background: white;
-        padding: 25px;
-        border-radius: 5px;
-        height: 350px;
-        width: 300px;
-
-        &__title {
-            text-align: center;
-        }
-        &__body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-        &__close {
-            cursor: pointer;
-            display: flex;
-            justify-content: flex-end;
-        }
-    }
-}
-
-.modal__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 30px;
-    height: 50px;
-    width: 150px;
-    cursor: pointer;
-}
-
 .modal {
 	position: fixed;
 	z-index: 1000;
@@ -654,13 +786,28 @@ a {
 	opacity: 0;
 	background-color: rgba(0, 0, 0, 0.7);
 	transition: 0.2s;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 	&__inner {
 		height: 100%;
 		padding: 30px;
+
+        display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: auto;
+		// overflow-x: hidden;
+        perspective: 500px;
 	}
 	&.modal--active {
 		visibility: visible;
 		opacity: 1;
+        .modal__dialog {
+            animation-name: modal;
+			animation-duration: 1s;
+        }
 	}
 	&.modal--s .modal__dialog {
 		width: 300px;
@@ -677,22 +824,40 @@ a {
 		flex-direction: column;
 		max-width: 80vw;
 		width: 100%;
-		padding: 30px;
-		background-color: #fff;
-		border-radius: 8px;
-
-		&-close-btn {
-			cursor: pointer;
-			padding: 0;
-			border: none;
-			background-color: transparent;
-
-			position: absolute;
-			top: 5px;
-			right: 10px;
-			font-size: 30px;
-			font-weight: 700;
-		}
+		padding: 15px 10px;
+		background: rgba(0, 0, 0, 0.65);
+		border-radius: 4px;
+        color: #fff;
+		&-close {
+            &-btn {
+                margin-left: auto;
+                cursor: pointer;
+                padding: 0;
+                border: none;
+                background-color: transparent;
+            }
+            &-icon {
+                width: 20px;
+                height: 20px;
+                fill: #fff;
+            }
+        }
+        &-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        &-content {
+            padding-top: 20px;
+            max-height: calc(100vh - 180px);
+        }
+        &-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-top: 20px;
+        }
 	}
 }
 
