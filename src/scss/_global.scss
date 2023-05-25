@@ -95,9 +95,6 @@ a {
             &::after {
                 transform: rotate(225deg);
             }
-            & ~ .dropdown-menu {
-                display: block;
-            }
         }
     }
     &__search {
@@ -500,6 +497,62 @@ a {
         }
         &.hidden {
             display: none;
+        }
+    }
+}
+
+// ========================== [ Categories list styles ] ==========================
+.categories-list {
+    position: absolute;
+    top: calc(100% + 5px);
+    width: 350px;
+    max-height: 320px;
+    padding: 10px 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    .mCSB_container {
+        margin-right: 15px;
+    }
+    .mCSB_dragger_bar {
+        background-color: $accentColor !important;
+    }
+    &__item + &__item {
+        margin-top: 5px;
+    }
+    &__link, &__text {
+        padding: 3px 10px 3px 20px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+    &__link {
+        display: inline-flex;
+        transition: transform .3s;
+        &:hover {
+            transform: translateX(10px);
+        }
+    }
+    &__text {
+        display: flex;
+        background-color: $mediumLightGrey;
+        color: $accentColor;
+    }
+}
+
+// ========================== [ Subcategories list styles ] ==========================
+.subcategories-list {
+    padding-left: 10px;
+    &__item + &__item {
+        margin-top: 5px;
+    }
+    &__link {
+        padding-left: 20px;
+        font-size: 12px;
+        line-height: 16px;
+        display: inline-flex;
+        transition: transform .3s;
+        &:hover {
+            transform: translateX(10px);
         }
     }
 }

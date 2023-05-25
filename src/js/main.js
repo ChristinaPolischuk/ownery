@@ -12,21 +12,14 @@ $(document).on("click", ".burger, .burger-close", function() {
 
 (function($){
     $(window).on("load", function() {
-        $(".dropdown-menu").mCustomScrollbar({
+        $(".js-custom-scrollbar-dark").mCustomScrollbar({
             axis:"y",
             theme:"dark-3",
             scrollButtons:{
                 enable:true
             }
         });
-        $(".menu-nav__body").mCustomScrollbar({
-            axis:"y",
-            theme:"dark-3",
-            scrollButtons:{
-                enable:true
-            }
-        });
-        $(".modal__dialog-content").mCustomScrollbar({
+        $(".js-custom-scrollbar-light").mCustomScrollbar({
             axis:"y",
             theme:"light-3",
             scrollButtons:{
