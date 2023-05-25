@@ -209,10 +209,6 @@ a {
           transform: rotate(225deg);
 }
 
-.btn__dropdown.is-opened ~ .dropdown-menu {
-  display: block;
-}
-
 .btn__search {
   background-color: transparent;
 }
@@ -788,6 +784,90 @@ a {
 
 .categories__link.hidden {
   display: none;
+}
+
+.categories-list {
+  position: absolute;
+  top: calc(100% + 5px);
+  width: 350px;
+  max-height: 320px;
+  padding: 10px 5px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+.categories-list .mCSB_container {
+  margin-right: 15px;
+}
+
+.categories-list .mCSB_dragger_bar {
+  background-color: #34465E !important;
+}
+
+.categories-list__item + .categories-list__item {
+  margin-top: 5px;
+}
+
+.categories-list__link,
+.categories-list__text {
+  padding: 3px 10px 3px 20px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.categories-list__link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  -o-transition: transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.categories-list__link:hover {
+  -webkit-transform: translateX(10px);
+      -ms-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+.categories-list__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #E6E6E6;
+  color: #34465E;
+}
+
+.subcategories-list {
+  padding-left: 10px;
+}
+
+.subcategories-list__item + .subcategories-list__item {
+  margin-top: 5px;
+}
+
+.subcategories-list__link {
+  padding-left: 20px;
+  font-size: 12px;
+  line-height: 16px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  -o-transition: transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.subcategories-list__link:hover {
+  -webkit-transform: translateX(10px);
+      -ms-transform: translateX(10px);
+          transform: translateX(10px);
 }
 
 .add-more {
