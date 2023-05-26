@@ -175,3 +175,5 @@ $(".accordion__header").on("click", function() {
         .end()
         .next().slideToggle(300)
 });
+
+let mixer = mixitup(".products-list");

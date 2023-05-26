@@ -1,18 +1,11 @@
-<div class="filters">
-    <div class="filters__item">
-        <a href="" class="filters__link">Customer rewievs</a>
-    </div>
-    <div class="filters__item">
-        <a href="" class="filters__link">Price&amp;Details</a>
-    </div>
-    <div class="filters__item">
-        <a href="" class="filters__link">Customer rewievs</a>
-    </div>
-    <div class="filters__item">
-        <a href="" class="filters__link">Price&amp;Details</a>
-    </div>
+<form class="filters">
+    <button class="filters__btn" data-filter="all" type="reset">All</button>
+    <button class="filters__btn" data-toggle=".category-customer-reviews" type="button">Customer rewievs</button>
+    <button class="filters__btn" data-toggle=".category-price-and-details" type="button">Price&amp;Details</button>
+    <button class="filters__btn" data-toggle=".category-art" type="button">Art</button>
+    <button class="filters__btn">Price&amp;Details</button>
     <div class="filters__item dropdown">
-        <a href="" class="filters__link filters__link--dropdown js-dropdown">Customer rewievs</a>
+        <span class="filters__text js-dropdown">Customer rewievs</span>
         <ul class="dropdown-menu js-custom-scrollbar-dark">
             <li class="dropdown-menu__item">
                 <a href="" class="dropdown-menu__link">Amazon Motors</a>
@@ -64,19 +57,13 @@
             </li>
         </ul>
     </div>
-    <div class="filters__item">
-        <a href="" class="filters__link">Price&amp;Details</a>
-    </div>
-    <div class="filters__item">
-        <a href="" class="filters__link">Customer rewievs</a>
-    </div>
-    <div class="filters__item">
-        <a href="" class="filters__link">Price&amp;Details</a>
-    </div>
+    <button class="filters__btn">Price&amp;Details</button>
+    <button class="filters__btn">Customer rewievs</button>
+    <button class="filters__btn">Price&amp;Details</button>
     <button class="btn btn--small js-modal-open" data-modal="filters">
         <svg class="btn__filter-icon">
             <use xlink:href="img/sprite/symbol/sprite.svg#filter"></use>
         </svg>
         Filters
     </button>
-</div>
+</form>

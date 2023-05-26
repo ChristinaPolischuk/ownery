@@ -48,6 +48,9 @@ body {
 a {
     color: inherit;
 }
+button {
+    font-family: $fontMain;
+}
 
 .wrapper {
     height: 100%;
@@ -119,6 +122,24 @@ a {
     }
     &--small {
         font-size: 12px;
+    }
+    &--grey {
+        background-color: $btnGrey;
+    }
+    &--yellow {
+        background-color: $btnYellow;
+    }
+    &--green {
+        background-color: $btnGreen;
+    }
+    &--peach {
+        background-color: $btnPeach;
+    }
+    &--red {
+        background-color: $btnRed;
+    }
+    &--violet {
+        background-color: $btnViolet;
     }
 }
 
@@ -576,8 +597,8 @@ a {
     padding: 18px 0 24px;
     border-top: 1px solid $mediumGrey;
     border-bottom: 1px solid $mediumGrey;
-    &__link {
-        display: block;
+    &__item, &__btn {
+        cursor: pointer;
         padding: 12px 10px;
         background-color: #fff;
         box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
@@ -586,30 +607,35 @@ a {
         font-weight: 300;
         transition: box-shadow .3s, transform .3s;
         &:hover {
-            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
         }
         &:active {
             transform: scale(.9);
         }
-        &--dropdown {
-            position: relative;
-            padding-right: 30px;
-            &::after {
-                content: '';
-                position: absolute;
-                right: 15px;
-                top: 14px;
-                width: 8px;
-                height: 8px;
-                border-bottom: 2px solid $textColor;
-                border-right: 2px solid $textColor;
-                border-radius: 2px;
-                transform: rotate(45deg);
-                transition: transform .3s;
-            }
-            &.is-opened::after {
-                transform: rotate(225deg);
-            }
+        &.mixitup-control-active {
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+            transform: scale(.9);
+        }
+    }
+    &__text {
+        position: relative;
+        padding-right: 30px;
+        display: block;
+        &::after {
+            content: '';
+            position: absolute;
+            right: 15px;
+            top: 3px;
+            width: 8px;
+            height: 8px;
+            border-bottom: 2px solid $textColor;
+            border-right: 2px solid $textColor;
+            border-radius: 2px;
+            transform: rotate(45deg);
+            transition: transform .3s;
+        }
+        &.is-opened::after {
+            transform: rotate(225deg);
         }
     }
 }
@@ -627,10 +653,9 @@ a {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    &__item {
+    &__cancel {
         display: flex;
         align-items: center;
-        cursor: pointer;
     }
     &__text {
         font-size: 12px;

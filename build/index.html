@@ -85,6 +85,16 @@
                     </a>
                 </div>
                 <div class="menu-nav__body js-custom-scrollbar-dark">
+                    <div class="languages">
+                        <a href="" class="languages__link flag flag--us">USA &amp; International</a>
+                        <a href="" class="languages__link flag flag--au">Australia</a>
+                        <a href="" class="languages__link flag flag--ca">Canada</a>
+                        <a href="" class="languages__link flag flag--fr">France</a>
+                        <a href="" class="languages__link flag flag--de">Germany</a>
+                        <a href="" class="languages__link flag flag--it">Italy</a>
+                        <a href="" class="languages__link flag flag--es">Spain</a>
+                        <a href="" class="languages__link flag flag--gb">United Kingdom</a>
+                    </div>
                     <div class="menu-nav__categories">
                         <div class="menu-nav__category">
                             <h6 class="menu-nav__title">Ownery Home</h6>
@@ -312,21 +322,14 @@
     <a href="" class="categories__link hidden">Antiques</a>
     <span class="add-more">More...</span>
 </nav>
-                <div class="filters">
-    <div class="filters__item">
-        <a href="" class="filters__link">Customer rewievs</a>
-    </div>
-    <div class="filters__item">
-        <a href="" class="filters__link">Price&amp;Details</a>
-    </div>
-    <div class="filters__item">
-        <a href="" class="filters__link">Customer rewievs</a>
-    </div>
-    <div class="filters__item">
-        <a href="" class="filters__link">Price&amp;Details</a>
-    </div>
+                <form class="filters">
+    <button class="filters__btn" data-filter="all" type="reset">All</button>
+    <button class="filters__btn" data-toggle=".category-customer-reviews" type="button">Customer rewievs</button>
+    <button class="filters__btn" data-toggle=".category-price-and-details" type="button">Price&amp;Details</button>
+    <button class="filters__btn" data-toggle=".category-art" type="button">Art</button>
+    <button class="filters__btn">Price&amp;Details</button>
     <div class="filters__item dropdown">
-        <a href="" class="filters__link filters__link--dropdown js-dropdown">Customer rewievs</a>
+        <span class="filters__text js-dropdown">Customer rewievs</span>
         <ul class="dropdown-menu js-custom-scrollbar-dark">
             <li class="dropdown-menu__item">
                 <a href="" class="dropdown-menu__link">Amazon Motors</a>
@@ -378,97 +381,37 @@
             </li>
         </ul>
     </div>
-    <div class="filters__item">
-        <a href="" class="filters__link">Price&amp;Details</a>
-    </div>
-    <div class="filters__item">
-        <a href="" class="filters__link">Customer rewievs</a>
-    </div>
-    <div class="filters__item">
-        <a href="" class="filters__link">Price&amp;Details</a>
-    </div>
+    <button class="filters__btn">Price&amp;Details</button>
+    <button class="filters__btn">Customer rewievs</button>
+    <button class="filters__btn">Price&amp;Details</button>
     <button class="btn btn--small js-modal-open" data-modal="filters">
         <svg class="btn__filter-icon">
             <use xlink:href="img/sprite/symbol/sprite.svg#filter"></use>
         </svg>
         Filters
     </button>
-</div>
+</form>
                 <div class="products">
     <div class="products-header">
         <div class="products-filter">
-            <div class="products-filter__item">
+            <button class="products-filter__cancel">
                 <span class="products-filter__text">Customer rewievs</span>
-                <button class="products-filter__cancel">
-                    <svg class="products-filter__cancel-icon">
-                        <use xlink:href="img/sprite/symbol/sprite.svg#cancel"></use>
-                    </svg>
-                </button>
-            </div>
-            <div class="products-filter__item">
-                <span class="products-filter__text">Customer rewievs</span>
-                <button class="products-filter__cancel">
-                    <svg class="products-filter__cancel-icon">
-                        <use xlink:href="img/sprite/symbol/sprite.svg#cancel"></use>
-                    </svg>
-                </button>
-            </div>
-            <div class="products-filter__item">
-                <span class="products-filter__text">Customer rewievs</span>
-                <button class="products-filter__cancel">
-                    <svg class="products-filter__cancel-icon">
-                        <use xlink:href="img/sprite/symbol/sprite.svg#cancel"></use>
-                    </svg>
-                </button>
-            </div>
-            <div class="products-filter__item">
-                <span class="products-filter__text">Customer rewievs</span>
-                <button class="products-filter__cancel">
-                    <svg class="products-filter__cancel-icon">
-                        <use xlink:href="img/sprite/symbol/sprite.svg#cancel"></use>
-                    </svg>
-                </button>
-            </div>
-            <div class="products-filter__item">
-                <span class="products-filter__text">Customer rewievs</span>
-                <button class="products-filter__cancel">
-                    <svg class="products-filter__cancel-icon">
-                        <use xlink:href="img/sprite/symbol/sprite.svg#cancel"></use>
-                    </svg>
-                </button>
-            </div>
-            <div class="products-filter__item">
-                <span class="products-filter__text">Customer rewievs</span>
-                <button class="products-filter__cancel">
-                    <svg class="products-filter__cancel-icon">
-                        <use xlink:href="img/sprite/symbol/sprite.svg#cancel"></use>
-                    </svg>
-                </button>
-            </div>
-            <div class="products-filter__item">
-                <span class="products-filter__text">Customer rewievs</span>
-                <button class="products-filter__cancel">
-                    <svg class="products-filter__cancel-icon">
-                        <use xlink:href="img/sprite/symbol/sprite.svg#cancel"></use>
-                    </svg>
-                </button>
-            </div>
-            <div class="products-filter__item">
-                <span class="products-filter__text">Customer rewievs</span>
-                <button class="products-filter__cancel">
-                    <svg class="products-filter__cancel-icon">
-                        <use xlink:href="img/sprite/symbol/sprite.svg#cancel"></use>
-                    </svg>
-                </button>
-            </div>
-            <div class="products-filter__item">
-                <span class="products-filter__text">Customer rewievs</span>
-                <button class="products-filter__cancel">
-                    <svg class="products-filter__cancel-icon">
-                        <use xlink:href="img/sprite/symbol/sprite.svg#cancel"></use>
-                    </svg>
-                </button>
-            </div>
+                <svg class="products-filter__cancel-icon">
+                    <use xlink:href="img/sprite/symbol/sprite.svg#cancel"></use>
+                </svg>
+            </button>
+            <button class="products-filter__cancel">
+                <span class="products-filter__text">Price&amp;Details</span>
+                <svg class="products-filter__cancel-icon">
+                    <use xlink:href="img/sprite/symbol/sprite.svg#cancel"></use>
+                </svg>
+            </button>
+            <button class="products-filter__cancel">
+                <span class="products-filter__text">Art</span>
+                <svg class="products-filter__cancel-icon">
+                    <use xlink:href="img/sprite/symbol/sprite.svg#cancel"></use>
+                </svg>
+            </button>
         </div>
         <div class="products-range-slider__wrap">
             <svg class="products-range-slider__grid-small">
@@ -481,7 +424,7 @@
         </div>
     </div>
     <div class="products-list">
-        <div class="products-list__item">
+        <div class="products-list__item mix category-price-and-details">
             <div class="products-list__badges">
                 <span class="products-list__badge">
                     <svg class="products-list__badge-icon heart">
@@ -508,11 +451,11 @@
             </h6>
             <span class="products-list__price">$0.90</span>
             <div class="products-list__footer">
-                <button class="btn-amazon">Check price</button>
+                <button class="btn btn--grey">Check price</button>
                 <a href="" class="more-info">More info...</a>
             </div>
         </div>
-        <div class="products-list__item">
+        <div class="products-list__item mix category-customer-reviews">
             <div class="products-list__badges">
                 <span class="products-list__badge">
                     <svg class="products-list__badge-icon heart">
@@ -543,7 +486,7 @@
                 <a href="" class="more-info">More info...</a>
             </div>
         </div>
-        <div class="products-list__item">
+        <div class="products-list__item mix category-price-and-details">
             <div class="products-list__badges">
                 <span class="products-list__badge">
                     <svg class="products-list__badge-icon heart">
@@ -574,7 +517,40 @@
                 <a href="" class="more-info">More info...</a>
             </div>
         </div>
-        <div class="products-list__item">
+
+        <div class="products-list__item mix category-art">
+            <div class="products-list__badges">
+                <span class="products-list__badge">
+                    <svg class="products-list__badge-icon heart">
+                        <use xlink:href="img/sprite/symbol/sprite.svg#heart"></use>
+                    </svg>
+                    <span class="products-list__badge-text">123</span>
+                </span>
+                <span class="products-list__badge">
+                    <svg class="products-list__badge-icon eye">
+                        <use xlink:href="img/sprite/symbol/sprite.svg#eye"></use>
+                    </svg>
+                    <span class="products-list__badge-text">12</span>
+                </span>
+            </div>
+            <a href="" class="products-list__img">
+                <picture>
+                    <source srcset="img/products/product_12.avif" type="image/avif" />
+                    <source srcset="img/products/product_12.webp" type="image/webp" />
+                    <img src="img/products/product_12.png" alt="img" />
+                </picture>
+            </a>
+            <h6 class="products-list__title">
+                <a href="">Shutterfly 8x8 Photo Book or $$ off a larger size Exp</a>
+            </h6>
+            <span class="products-list__price">$0.90</span>
+            <div class="products-list__footer">
+                <button class="btn btn--yellow">Check price</button>
+                <a href="" class="more-info">More info...</a>
+            </div>
+        </div>
+
+        <div class="products-list__item mix category-customer-reviews">
             <div class="products-list__badges">
                 <span class="products-list__badge">
                     <svg class="products-list__badge-icon heart">
@@ -601,11 +577,11 @@
             </h6>
             <span class="products-list__price">$0.90</span>
             <div class="products-list__footer">
-                <button class="btn-amazon">Check price</button>
+                <button class="btn btn--green">Check price</button>
                 <a href="" class="more-info">More info...</a>
             </div>
         </div>
-        <div class="products-list__item">
+        <div class="products-list__item mix category-price-and-details">
             <div class="products-list__badges">
                 <span class="products-list__badge">
                     <svg class="products-list__badge-icon heart">
@@ -632,11 +608,11 @@
             </h6>
             <span class="products-list__price">$0.90</span>
             <div class="products-list__footer">
-                <button class="btn-amazon">Check price</button>
+                <button class="btn btn--peach">Check price</button>
                 <a href="" class="more-info">More info...</a>
             </div>
         </div>
-        <div class="products-list__item">
+        <div class="products-list__item mix category-customer-reviews">
             <div class="products-list__badges">
                 <span class="products-list__badge">
                     <svg class="products-list__badge-icon heart">
@@ -663,11 +639,11 @@
             </h6>
             <span class="products-list__price">$0.90</span>
             <div class="products-list__footer">
-                <button class="btn-amazon">Check price</button>
+                <button class="btn btn--red">Check price</button>
                 <a href="" class="more-info">More info...</a>
             </div>
         </div>
-        <div class="products-list__item">
+        <div class="products-list__item mix category-price-and-details">
             <div class="products-list__badges">
                 <span class="products-list__badge">
                     <svg class="products-list__badge-icon heart">
@@ -694,11 +670,44 @@
             </h6>
             <span class="products-list__price">$0.90</span>
             <div class="products-list__footer">
+                <button class="btn btn--violet">Check price</button>
+                <a href="" class="more-info">More info...</a>
+            </div>
+        </div>
+
+        <div class="products-list__item mix category-art">
+            <div class="products-list__badges">
+                <span class="products-list__badge">
+                    <svg class="products-list__badge-icon heart">
+                        <use xlink:href="img/sprite/symbol/sprite.svg#heart"></use>
+                    </svg>
+                    <span class="products-list__badge-text">123</span>
+                </span>
+                <span class="products-list__badge">
+                    <svg class="products-list__badge-icon eye">
+                        <use xlink:href="img/sprite/symbol/sprite.svg#eye"></use>
+                    </svg>
+                    <span class="products-list__badge-text">12</span>
+                </span>
+            </div>
+            <a href="" class="products-list__img">
+                <picture>
+                    <source srcset="img/products/product_12.avif" type="image/avif" />
+                    <source srcset="img/products/product_12.webp" type="image/webp" />
+                    <img src="img/products/product_12.png" alt="img" />
+                </picture>
+            </a>
+            <h6 class="products-list__title">
+                <a href="">Shutterfly 8x8 Photo Book or $$ off a larger size Exp</a>
+            </h6>
+            <span class="products-list__price">$0.90</span>
+            <div class="products-list__footer">
                 <button class="btn-amazon">Check price</button>
                 <a href="" class="more-info">More info...</a>
             </div>
         </div>
-        <div class="products-list__item">
+
+        <div class="products-list__item mix category-customer-reviews">
             <div class="products-list__badges">
                 <span class="products-list__badge">
                     <svg class="products-list__badge-icon heart">
@@ -729,7 +738,7 @@
                 <a href="" class="more-info">More info...</a>
             </div>
         </div>
-        <div class="products-list__item">
+        <div class="products-list__item mix category-price-and-details">
             <div class="products-list__badges">
                 <span class="products-list__badge">
                     <svg class="products-list__badge-icon heart">
@@ -760,7 +769,7 @@
                 <a href="" class="more-info">More info...</a>
             </div>
         </div>
-        <div class="products-list__item">
+        <div class="products-list__item mix category-customer-reviews">
             <div class="products-list__badges">
                 <span class="products-list__badge">
                     <svg class="products-list__badge-icon heart">
@@ -791,7 +800,7 @@
                 <a href="" class="more-info">More info...</a>
             </div>
         </div>
-        <div class="products-list__item">
+        <div class="products-list__item mix category-price-and-details">
             <div class="products-list__badges">
                 <span class="products-list__badge">
                     <svg class="products-list__badge-icon heart">
@@ -822,7 +831,7 @@
                 <a href="" class="more-info">More info...</a>
             </div>
         </div>
-        <div class="products-list__item">
+        <div class="products-list__item mix category-customer-reviews">
             <div class="products-list__badges">
                 <span class="products-list__badge">
                     <svg class="products-list__badge-icon heart">
@@ -1186,7 +1195,7 @@
                             <use xlink:href="img/sprite/symbol/sprite.svg#cancel"></use>
                         </svg>
                     </button>
-                    <span class="filter-clear__text">Clear all filters</span>
+                    <button class="filter-clear__text" data-filter="all" type="reset">Clear all filters</button>
                 </div>
                 <button class="btn__white js-show-all-filters">Show all <span>298</span></button>
             </div>

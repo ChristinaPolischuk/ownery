@@ -137,3 +137,45 @@
         fill: #fff;
     }
 }
+
+// ========================= [ Languages styles ] =========================
+.languages {
+    padding: 10px;
+    &__link + &__link {
+        margin-top: 6px;
+    }
+    &__link {
+        display: block;
+        font-size: 12px;
+        line-height: 16px;
+        &.flag {
+            padding-left: 23px;
+            background-repeat: no-repeat;
+            background-size: 18px 14px;
+            &--us {
+                background-image: url(../img/flags/us.svg);
+            }
+            &--au {
+                background-image: url(../img/flags/au.svg);
+            }
+            &--ca {
+                background-image: url(../img/flags/ca.svg);
+            }
+            &--fr {
+                background-image: url(../img/flags/fr.svg);
+            }
+            &--de {
+                background-image: url(../img/flags/de.svg);
+            }
+            &--it {
+                background-image: url(../img/flags/it.svg);
+            }
+            &--es {
+                background-image: url(../img/flags/es.svg);
+            }
+            &--gb {
+                background-image: url(../img/flags/gb.svg);
+            }
+        }
+    }
+}
