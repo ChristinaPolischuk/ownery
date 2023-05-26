@@ -524,6 +524,7 @@ button {
 
 // ========================== [ Categories list styles ] ==========================
 .categories-list {
+    display: none;
     position: absolute;
     top: calc(100% + 5px);
     width: 350px;
@@ -554,6 +555,7 @@ button {
         }
     }
     &__text {
+        position: relative;
         display: flex;
         background-color: $mediumLightGrey;
         color: $accentColor;
@@ -562,19 +564,39 @@ button {
 
 // ========================== [ Subcategories list styles ] ==========================
 .subcategories-list {
+    margin-top: 6px;
     padding-left: 10px;
     &__item + &__item {
         margin-top: 5px;
     }
-    &__link {
+    &__icon {
+        position: absolute;
+    }
+    &__link, &__text {
         padding-left: 20px;
         font-size: 12px;
-        line-height: 16px;
+        line-height: 16px; 
+    }
+    &__link {
         display: inline-flex;
         transition: transform .3s;
         &:hover {
             transform: translateX(10px);
         }
+    }
+    &__text {
+        position: relative;
+        display: flex;
+        background-color: $mediumLightGrey;
+        color: $accentColor;
+    }
+    &__icon {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 15px;
+        height: 20px;
+        fill: $mediumLightGrey;
     }
 }
 
