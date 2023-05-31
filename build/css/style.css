@@ -298,24 +298,37 @@ button {
 }
 
 .btn-amazon {
-  padding: 10px 10px 10px 40px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 135px;
+  padding: 10px;
   background-color: #34465E;
-  background-image: url(../img/general/amazon-icon.png);
-  background-position: 10px 6px;
-  background-repeat: no-repeat;
   border-radius: 4px;
   color: #fff;
   font-size: 16px;
 }
 
+.btn-amazon__icon {
+  margin-right: 5px;
+  width: 20px;
+  height: 22px;
+}
+
 .dropdown {
   position: relative;
-  z-index: 1;
 }
 
 .dropdown-menu {
   display: none;
   position: absolute;
+  z-index: 100;
   top: calc(100% + 5px);
   left: 0;
   width: -webkit-max-content;
@@ -488,9 +501,9 @@ button {
   padding: 10px 15px;
   font-size: 12px;
   line-height: 1.33;
-  -webkit-transition: background-color 0.3s;
-  -o-transition: background-color 0.3s;
-  transition: background-color 0.3s;
+  -webkit-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
 }
 
 .search-form__matches-link:hover {
@@ -690,12 +703,7 @@ button {
       -ms-flex-align: center;
           align-items: center;
   gap: 5px;
-  cursor: pointer;
-}
-
-.filter-clear__btn {
   background-color: transparent;
-  line-height: 1;
 }
 
 .filter-clear__icon {
@@ -707,6 +715,7 @@ button {
 .filter-clear__text {
   font-size: 12px;
   font-weight: 300;
+  color: #fff;
 }
 
 .select2-container--default .select2-selection--single {
@@ -817,6 +826,7 @@ button {
 .categories-list {
   display: none;
   position: absolute;
+  z-index: 100;
   top: calc(100% + 5px);
   width: 350px;
   max-height: 320px;
@@ -840,7 +850,7 @@ button {
 }
 
 .categories-list__link,
-.categories-list__text {
+.categories-list__sublink {
   padding: 3px 10px 3px 20px;
   font-size: 12px;
   line-height: 16px;
@@ -863,7 +873,7 @@ button {
           transform: translateX(10px);
 }
 
-.categories-list__text {
+.categories-list__sublink {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -886,7 +896,7 @@ button {
 }
 
 .subcategories-list__link,
-.subcategories-list__text {
+.subcategories-list__sublink {
   padding-left: 20px;
   font-size: 12px;
   line-height: 16px;
@@ -909,7 +919,7 @@ button {
           transform: translateX(10px);
 }
 
-.subcategories-list__text {
+.subcategories-list__sublink {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -990,6 +1000,7 @@ button {
 
 .filters__text {
   position: relative;
+  top: 2px;
   padding-right: 30px;
   display: block;
 }
@@ -1094,6 +1105,10 @@ button {
 .products-range-slider__grid-small {
   width: 11px;
   height: 11px;
+}
+
+.products-range-slider .noUi-origin {
+  width: 86px;
 }
 
 .products-range-slider .noUi-connect,
@@ -1238,10 +1253,11 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   gap: 10px;
+}
+
+.products-list__footer > * {
+  margin: 0 auto;
 }
 
 .pagination {
@@ -1642,8 +1658,15 @@ button {
   padding: 10px;
 }
 
+.languages__title {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.36;
+}
+
 .languages__link + .languages__link {
-  margin-top: 6px;
+  margin-top: 20px;
 }
 
 .languages__link {
@@ -1839,6 +1862,10 @@ button {
 
   .products-range-slider {
     width: 48px;
+  }
+
+  .products-range-slider .noUi-origin {
+    width: 24px;
   }
 
   .header {

@@ -174,23 +174,29 @@ button {
 }
 
 .btn-amazon {
-    padding: 10px 10px 10px 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 135px;
+    padding: 10px;
     background-color: $accentColor;
-    background-image: url(../img/general/amazon-icon.png);
-    background-position: 10px 6px;
-    background-repeat: no-repeat;
     border-radius: 4px;
     color: #fff;
     font-size: 16px;
+    &__icon {
+        margin-right: 5px;
+        width: 20px;
+        height: 22px;
+    }
 }
 
 // ========================== [ Dropdown styles ] ==========================
 .dropdown {
     position: relative;
-    z-index: 1;
     &-menu {
         display: none;
         position: absolute;
+        z-index: 100;
         top: calc(100% + 5px);
         left: 0;
         width: max-content;
@@ -300,7 +306,7 @@ button {
             padding: 10px 15px;
             font-size: 12px;
             line-height: 1.33;
-            transition: background-color .3s;
+            transition: background-color .5s;
             &:hover {
                 background-color: $mediumLightGrey;
             }
@@ -432,11 +438,7 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    cursor: pointer;
-    &__btn {
-        background-color: transparent;
-        line-height: 1;
-    }
+    background-color: transparent;
     &__icon {
         width: 10px;
         height: 10px;
@@ -445,6 +447,7 @@ button {
     &__text {
         font-size: 12px;
         font-weight: 300;
+        color: #fff;
     }
 }
 // ========================== [ select2 styles ] ==========================
@@ -526,6 +529,7 @@ button {
 .categories-list {
     display: none;
     position: absolute;
+    z-index: 100;
     top: calc(100% + 5px);
     width: 350px;
     max-height: 320px;
@@ -542,7 +546,7 @@ button {
     &__item + &__item {
         margin-top: 5px;
     }
-    &__link, &__text {
+    &__link, &__sublink {
         padding: 3px 10px 3px 20px;
         font-size: 12px;
         line-height: 16px;
@@ -554,7 +558,7 @@ button {
             transform: translateX(10px);
         }
     }
-    &__text {
+    &__sublink {
         position: relative;
         display: flex;
         background-color: $mediumLightGrey;
@@ -572,7 +576,7 @@ button {
     &__icon {
         position: absolute;
     }
-    &__link, &__text {
+    &__link, &__sublink {
         padding-left: 20px;
         font-size: 12px;
         line-height: 16px; 
@@ -584,7 +588,7 @@ button {
             transform: translateX(10px);
         }
     }
-    &__text {
+    &__sublink {
         position: relative;
         display: flex;
         background-color: $mediumLightGrey;
@@ -641,6 +645,7 @@ button {
     }
     &__text {
         position: relative;
+        top: 2px;
         padding-right: 30px;
         display: block;
         &::after {
@@ -716,6 +721,12 @@ button {
     &__grid-small {
         width: 11px;
         height: 11px;
+    }
+    .noUi-origin {
+        width: 86px;
+        @media (max-width: $breakpoint768) {
+            width: 24px;
+        }
     }
     .noUi-connect, .progress-bar {
         background-color: $accentColor;
@@ -815,8 +826,10 @@ button {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: space-between;
         gap: 10px;
+        & > * {
+            margin: 0 auto;
+        }
     }
 }
 

@@ -141,8 +141,14 @@
 // ========================= [ Languages styles ] =========================
 .languages {
     padding: 10px;
+    &__title {
+        margin-bottom: 15px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.36;
+    }
     &__link + &__link {
-        margin-top: 6px;
+        margin-top: 20px;
     }
     &__link {
         display: block;
