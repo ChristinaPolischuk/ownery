@@ -1,0 +1,560 @@
+// Container
+.container {
+    max-width: ($containerWidth + $containerPadding) + px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 $containerSidePadding + px;
+
+    @media (max-width: $breakpoint1450) {
+        max-width: 1200px;
+    }
+
+    @media (max-width: $breakpoint992) {
+        max-width: 970px;
+    }
+
+    @media (max-width: $breakpoint768) {
+        max-width: 740px;
+    }
+
+    @media (max-width: $breakpoint480) {
+        max-width: none;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+// Body & Locked
+body {
+    font-family: $fontMain;
+    line-height: 1.8;
+    color: $blackColor;
+    &.locked {
+        overflow: hidden;
+        &::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(#000, .7);
+            z-index: 2;
+        }
+    }
+}
+
+a {
+    color: inherit;
+}
+button {
+    font-family: $fontMain;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+}
+
+// ========================== [ Logo styles ] ==========================
+.logo {
+  &__img {
+    width: 150px;
+    height: 42px;
+  }
+}
+
+// ========================== [ Title styles ] ==========================
+.main-title {
+  font-size: 45px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: $accentColor;
+  @media (max-width: $breakpoint1200) {
+    font-size: 40px;
+  }
+  @media (max-width: $breakpoint992) {
+    font-size: 30px;
+  }
+}
+
+// ========================== [ Text styles ] ==========================
+.text-s {
+  font-size: 20px;
+}
+.text-l {
+  font-size: 22px;
+}
+.text-light {
+  color: $darkGrey;
+}
+.text-black {
+  color: $blackColor;
+}
+
+.description {
+  font-size: 22px;
+  font-weight: 500;
+  color: $blackColor;
+  @media (max-width: $breakpoint1200) {
+    font-size: 20px;
+  }
+  @media (max-width: $breakpoint992) {
+    font-size: 18px;
+  }
+}
+
+// ========================== [ Buttons styles ] ==========================
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 45px;
+  height: 60px;
+  background-color: $accentColor;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  transition: background-color .4s;
+  @media (max-width: $breakpoint992) {
+    padding: 0 25px;
+    font-size: 18px;
+  }
+  &:hover, &:focus {
+    animation: shake .6s ease-in-out both;
+    .btn__text {
+      animation: shakeText .5s ease-in-out both;
+      animation-delay: 0.05s;
+    }
+  }
+  &:active {
+    background-color: darken($accentColor, 15%);
+  }
+  &__text {
+    position: relative;
+  }
+  &--desktop {
+    @media (max-width: $breakpoint768) {
+      display: none;
+    }
+  }
+  &--mobile {
+    display: none;
+    @media (max-width: $breakpoint768) {
+      display: inline-flex;
+    }
+  }
+}
+
+// ========================== [ Search form styles ] ==========================
+.search-form {
+  position: relative;
+  &__field {
+    padding: 0 44px 0 15px;
+    width: 242px;
+    height: 42px;
+    border-radius: 30px;
+    border: 1px solid $greyColor;
+    outline: none;
+    transition: border-color .4s;
+    &:focus {
+      border-color: $accentColor;
+    }
+  }
+  &__btn {
+    position: absolute;
+    top: 14px;
+    right: 24px;
+    background-color: transparent;
+    &:hover {
+      .search-form__btn-icon {
+        transform: scale(1.3) rotate(90deg);
+      }
+    }
+  }
+  &__btn-icon {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: $accentColor;
+    transition: transform .4s;
+  }
+}
+
+// ========================== [ User styles ] ==========================
+.user {
+  margin-left: 23px;
+  & > *:not(:last-child) {
+    margin-right: 23px;
+  }
+  &__link {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  &__btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 42px;
+    padding: 0 10px;
+    background-color: $accentColor;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color .4s;
+    &:hover, &:focus {
+      animation: shake .6s ease-in-out both;
+      .user__btn-text {
+        animation: shakeText .5s ease-in-out both;
+        animation-delay: 0.05s;
+      }
+    }
+    &:active {
+      background-color: darken($accentColor, 15%);
+    }
+  }
+  &__btn-text {
+    position: relative;
+  }
+}
+
+// ========================== [ Language styles ] ==========================
+.language-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  width: 80px;
+  height: 42px;
+  border-radius: 30px;
+  border: 1px solid $greyColor;
+  font-size: 16px;
+  font-weight: 500;
+  &:hover, &:focus {
+    animation: shake .6s ease-in-out both;
+    .language-link__text {
+      animation: shakeText .5s ease-in-out both;
+      animation-delay: 0.05s;
+    }
+  }
+  &__text {
+    position: relative;
+  }
+}
+
+// ========================== [ Modal styles ] ==========================
+.modal {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	transition: 0.2s;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+	&__inner {
+		height: 100%;
+		padding: 30px;
+
+        display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: auto;
+		// overflow-x: hidden;
+        perspective: 500px;
+	}
+	&.modal--active {
+		visibility: visible;
+		opacity: 1;
+        .modal__dialog {
+            animation-name: modal;
+			animation-duration: 1s;
+        }
+	}
+	&.modal--s .modal__dialog {
+		width: 300px;
+	}
+	&.modal--m .modal__dialog {
+		width: 600px;
+	}
+	&.modal--l .modal__dialog {
+		width: 900px;
+	}
+	&__dialog {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		max-width: 80vw;
+		width: 100%;
+		padding: 15px 10px;
+		background: rgba(0, 0, 0, 0.65);
+		border-radius: 4px;
+        color: #fff;
+		&-close {
+            &-btn {
+                margin-left: auto;
+                cursor: pointer;
+                padding: 0;
+                border: none;
+                background-color: transparent;
+            }
+            &-icon {
+                width: 20px;
+                height: 20px;
+                fill: #fff;
+            }
+        }
+        &-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        &-content {
+            padding-top: 20px;
+            max-height: calc(100vh - 180px);
+        }
+        &-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-top: 20px;
+        }
+	}
+}
+
+// ========================== [ Section styles ] ==========================
+.section {
+  padding: 60px 0;
+  @media (max-width: $breakpoint768) {
+    padding: 35px 0;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    @media (max-width: $breakpoint992) {
+      gap: 15px;
+    }
+    @media (max-width: $breakpoint768) {
+      flex-direction: column;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 55%;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 45%;
+    @media (max-width: $breakpoint992) {
+      width: 40%;
+    }
+    @media (max-width: $breakpoint768) {
+      width: 100%;
+    }
+  }
+  &__img-content {
+    width: 55%;
+    @media (max-width: $breakpoint992) {
+      width: 60%;
+    }
+    @media (max-width: $breakpoint768) {
+      width: 100%;
+    }
+  }
+}
+
+// ========================== [ Vehicle ownership styles ] ==========================
+.vehicle-ownership {
+  display: flex;
+  @media (max-width: $breakpoint768) {
+    margin-bottom: 55px;
+  }
+  &__img {
+    position: relative;
+    flex: none;
+    width: 80%;
+    @media (max-width: $breakpoint576) {
+      width: 85%;
+    }
+  }
+  &__img-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  &__img-pic {
+    position: relative;
+    top: 80px;
+    width: 88%;
+    @media (max-width: $breakpoint576) {
+      width: 100%;
+    }
+  }
+  &__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    left: -80px;
+  }
+  &__link {
+    position: relative;
+    display: inline-flex;
+    white-space: nowrap;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(151, 173, 186, 0.25);
+    font-size: 18px;
+    font-weight: 500;
+    color: $accentColor;
+    @media (max-width: $breakpoint992) {
+      font-size: 15px;
+    }
+    @media (max-width: $breakpoint576) {
+      font-size: 13px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    &:nth-child(1) {
+      left: -160px;
+      @media (max-width: $breakpoint992) {
+        left: -150px;
+      }
+    }
+    &:nth-child(2) {
+      left: -87px;
+      @media (max-width: $breakpoint992) {
+        left: -77px;
+      }
+    }
+    &:nth-child(3) {
+      left: -38px;
+      @media (max-width: $breakpoint992) {
+        left: -28px;
+      }
+    }
+    &:nth-child(4) {
+      left: -12px;
+      @media (max-width: $breakpoint992) {
+        left: -2px;
+      }
+    }
+    &:nth-child(5) {
+      left: 5px;
+      @media (max-width: $breakpoint992) {
+        left: 15px;
+      }
+    }
+    &:nth-child(6) {
+      left: -12px;
+      @media (max-width: $breakpoint992) {
+        left: -2px;
+      }
+    }
+    &:nth-child(7) {
+      left: -38px;
+      @media (max-width: $breakpoint992) {
+        left: -28px;
+      }
+    }
+  }
+  &__link-text {
+    position: relative;
+    left: 0;
+    transition: left ease .4s;
+    &:hover {
+      left: 10px;
+      &::before {
+        left: -12px;
+        opacity: 1;
+      }
+    }
+    &::before {
+      content: "→";
+      transition: left ease .5s;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -14px;
+      opacity:0;
+      font-size: 20px;
+      line-height: 1;
+    }
+  }
+}
+
+@keyframes modal {
+	from {
+		transform: translateY(-100%) rotateX(30deg);
+	}
+	to {
+		transform: translateY(0) rotateX(0deg);
+	}
+}
+
+// ========================== [ Animations styles ] ==========================
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes shakeText {
+  0% {
+    right: 4px;
+  }
+  33% {
+    right: -4px;
+  }
+  66% {
+    right: 4px;
+  }
+  100% {
+    right: 0;
+  }
+}

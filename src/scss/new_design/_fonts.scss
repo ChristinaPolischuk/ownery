@@ -1,0 +1,22 @@
+@mixin font-face($font-name, $font-name-local, $path, $weight: normal, $style: normal) {
+    @font-face {
+      font-family: quote($font-name);
+      src: local(quote(#{$font-name-local})), 
+      url(#{$path}.woff) format("woff"),
+      url(#{$path}.woff2) format("woff2"),
+      url(#{$path}.ttf) format("ttf"),
+      url(#{$path}.eot) format("eot");
+      font-weight: $weight;
+      font-style: $style;
+      font-display: swap;
+    }
+  }
+
+@include font-face("Montserrat", "Montserrat-Regular", "../fonts/Montserrat-Regular", 400);
+@include font-face("Montserrat", "Montserrat-Medium", "../fonts/Montserrat-Medium", 500);
+@include font-face("Montserrat", "Montserrat-SemiBold", "../fonts/Montserrat-SemiBold", 600);
+@include font-face("Montserrat", "Montserrat-Bold", "../fonts/Montserrat-Bold", 700);
+@include font-face("Montserrat", "Montserrat-ExtraBold", "../fonts/Montserrat-ExtraBold", 900);
+
+@include font-face("Inter", "Inter-Regular", "../fonts/Inter-Regular", 400);
+@include font-face("Inter", "Inter-Bold", "../fonts/Inter-Bold", 700);

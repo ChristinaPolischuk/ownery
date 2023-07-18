@@ -15,9 +15,9 @@ let path = {
     },
     src: {
         html: [source_folder + '/*.html', '!' + source_folder + '/_*.html'],
-        css: source_folder + '/scss/style.scss',
+        css: [source_folder + '/scss/style.scss', source_folder + '/scss/main.scss'],
         libsCss: [source_folder + '/js/libs/mCustomScrollbar/jquery.mCustomScrollbar.css', source_folder + '/js/libs/noUiSlider/nouislider.css', source_folder + '/js/libs/select2/select2.min.css'],
-        js: source_folder + '/js/scripts.js',
+        js: [source_folder + '/js/scripts.js', source_folder + '/js/app.js'],
         libsJS: [source_folder + '/js/libs/jquery-3.7.0(lib).min.js', source_folder + '/js/libs/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js', source_folder + '/js/libs/noUiSlider/nouislider.js', source_folder + '/js/libs/select2/select2.min.js', source_folder + '/js/libs/mixitup.min.js'],
         img: [`${source_folder}/img/**/*.+(png|jpg|jpeg|ico|svg|webp)`, `!${source_folder}/img/sprite/*.svg`],
         imgConvert: [`${source_folder}/img/**/*.*`, `!${source_folder}/img/**/*.svg`],
