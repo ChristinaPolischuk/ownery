@@ -20,6 +20,9 @@
     @media (max-width: $breakpoint480) {
         max-width: none;
     }
+    & + .container {
+      margin-top: 36px;
+    }
 }
 
 html, body {
@@ -84,6 +87,17 @@ button {
     font-size: 30px;
   }
 }
+.title {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  @media (max-width: $breakpoint1200) {
+    font-size: 36px;
+  }
+  @media (max-width: $breakpoint992) {
+    font-size: 28px;
+  }
+}
 
 // ========================== [ Text styles ] ==========================
 .text-s {
@@ -91,6 +105,12 @@ button {
 }
 .text-l {
   font-size: 22px;
+  @media (max-width: $breakpoint1200) {
+    font-size: 18px;
+  }
+  @media (max-width: $breakpoint768) {
+    font-size: 16px;
+  }
 }
 .text-light {
   color: $darkGrey;
@@ -98,16 +118,31 @@ button {
 .text-black {
   color: $blackColor;
 }
+.text-white {
+  color: #fff;
+}
+.text-center {
+  text-align: center;
+}
 
 .description {
   font-size: 22px;
   font-weight: 500;
-  color: $blackColor;
   @media (max-width: $breakpoint1200) {
     font-size: 20px;
   }
   @media (max-width: $breakpoint992) {
     font-size: 18px;
+  }
+}
+.description-l {
+  font-size: 26px;
+  font-weight: 500;
+  @media (max-width: $breakpoint1200) {
+    font-size: 22px;
+  }
+  @media (max-width: $breakpoint992) {
+    font-size: 20px;
   }
 }
 
@@ -116,6 +151,7 @@ button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  flex: none;
   padding: 0 45px;
   height: 60px;
   background-color: $accentColor;
@@ -127,6 +163,9 @@ button {
   @media (max-width: $breakpoint992) {
     padding: 0 25px;
     font-size: 18px;
+  }
+  @media (max-width: $breakpoint480) {
+    width: 100%;
   }
   &:hover, &:focus {
     animation: shake .6s ease-in-out both;
@@ -141,16 +180,17 @@ button {
   &__text {
     position: relative;
   }
-  &--desktop {
-    @media (max-width: $breakpoint768) {
-      display: none;
-    }
-  }
-  &--mobile {
+}
+
+.desktop {
+  @media (max-width: $breakpoint768) {
     display: none;
-    @media (max-width: $breakpoint768) {
-      display: inline-flex;
-    }
+  }
+}
+.mobile {
+  display: none;
+  @media (max-width: $breakpoint768) {
+    display: inline-flex;
   }
 }
 
@@ -345,10 +385,14 @@ button {
   @media (max-width: $breakpoint768) {
     padding: 35px 0;
   }
+  &--bg-accent {
+    background-color: $accentColor;
+    color: #fff;
+  }
   &__inner {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     gap: 30px;
     @media (max-width: $breakpoint992) {
       gap: 15px;
@@ -363,6 +407,9 @@ button {
     align-items: flex-start;
     gap: 15px;
     width: 55%;
+    @media (max-width: $breakpoint768) {
+      width: 100%;
+    }
   }
   &__box {
     display: flex;
@@ -370,11 +417,21 @@ button {
     align-items: flex-start;
     gap: 15px;
     width: 45%;
+    margin: auto 0;
     @media (max-width: $breakpoint992) {
       width: 40%;
     }
     @media (max-width: $breakpoint768) {
       width: 100%;
+    }
+  }
+  &__img {
+    width: 45%;
+    position: relative;
+    @media (max-width: $breakpoint768) {
+      width: 100%;
+      max-width: 495px;
+      margin: 0 auto;
     }
   }
   &__img-content {
@@ -387,19 +444,59 @@ button {
     }
   }
 }
-
+// ========================== [ Vehicle types styles ] ==========================
+.vehicle {
+  &-types {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    @media (max-width: $breakpoint576) {
+      justify-content: flex-start;
+    }
+  }
+  &-type {
+    transition: transform .3s;
+    &:hover {
+      transform: scale(1.2);
+    }
+    &:active {
+      transform: scale(.9);
+    }
+    &__icon {
+      width: 54px;
+      height: 54px;
+      &.stroke {
+        fill: none;
+        stroke: $accentColor;
+        stroke-width: 2px;
+      }
+      &.fill {
+        fill: $accentColor;
+      }
+    }
+  }
+}
 // ========================== [ Vehicle ownership styles ] ==========================
 .vehicle-ownership {
   display: flex;
+  position: relative;
   @media (max-width: $breakpoint768) {
-    margin-bottom: 55px;
+    margin-bottom: 70px;
+  }
+  @media (max-width: $breakpoint480) {
+    margin-bottom: 90px;
   }
   &__img {
     position: relative;
     flex: none;
     width: 80%;
     @media (max-width: $breakpoint576) {
-      width: 85%;
+      width: 90%;
+    }
+    @media (max-width: $breakpoint480) {
+      width: 95%;
     }
   }
   &__img-shape {
@@ -414,19 +511,26 @@ button {
     top: 80px;
     width: 88%;
     @media (max-width: $breakpoint576) {
-      width: 100%;
+      width: 85%;
+      top: 80px;
+      left: -15px;
+    }
+    @media (max-width: $breakpoint480) {
+      width: 80%;
     }
   }
   &__links {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
-    position: relative;
-    left: -80px;
+    align-items: flex-end;
   }
   &__link {
-    position: relative;
     display: inline-flex;
     white-space: nowrap;
     padding: 5px 15px;
@@ -439,52 +543,88 @@ button {
     @media (max-width: $breakpoint992) {
       font-size: 15px;
     }
-    @media (max-width: $breakpoint576) {
+    @media (max-width: $breakpoint480) {
       font-size: 13px;
     }
     &:not(:last-child) {
       margin-bottom: 10px;
     }
     &:nth-child(1) {
-      left: -160px;
-      @media (max-width: $breakpoint992) {
-        left: -150px;
+      margin-right: 40%;
+      @media (max-width: $breakpoint768) {
+        margin-right: 45%;
+      }
+      @media (max-width: $breakpoint576) {
+        margin-right: 35%;
+      }
+      @media (max-width: $breakpoint480) {
+        margin-right: 25%;
       }
     }
     &:nth-child(2) {
-      left: -87px;
-      @media (max-width: $breakpoint992) {
-        left: -77px;
+      margin-right: 22%;
+      @media (max-width: $breakpoint768) {
+        margin-right: 25%;
+      }
+      @media (max-width: $breakpoint576) {
+        margin-right: 15%;
+      }
+      @media (max-width: $breakpoint480) {
+        margin-right: 8%;
       }
     }
     &:nth-child(3) {
-      left: -38px;
-      @media (max-width: $breakpoint992) {
-        left: -28px;
+      margin-right: 5%;
+      @media (max-width: $breakpoint768) {
+        margin-right: 10%;
+      }
+      @media (max-width: $breakpoint576) {
+        margin-right: 5%;
+      }
+      @media (max-width: $breakpoint480) {
+        margin-right: 0;
       }
     }
     &:nth-child(4) {
-      left: -12px;
-      @media (max-width: $breakpoint992) {
-        left: -2px;
+      margin-right: 10%;
+      @media (max-width: $breakpoint768) {
+        margin-right: 12%;
+      }
+      @media (max-width: $breakpoint576) {
+        margin-right: 2%;
+      }
+      @media (max-width: $breakpoint480) {
+        margin-right: 0;
       }
     }
     &:nth-child(5) {
-      left: 5px;
-      @media (max-width: $breakpoint992) {
-        left: 15px;
+      margin-right: 10%;
+      @media (max-width: $breakpoint768) {
+        margin-right: 12%;
+      }
+      @media (max-width: $breakpoint576) {
+        margin-right: 5%;
+      }
+      @media (max-width: $breakpoint480) {
+        margin-right: 2%;
       }
     }
     &:nth-child(6) {
-      left: -12px;
-      @media (max-width: $breakpoint992) {
-        left: -2px;
+      margin-right: 9%;
+      @media (max-width: $breakpoint576) {
+        margin-right: 5%;
+      }
+      @media (max-width: $breakpoint480) {
+        margin-right: 3%;
       }
     }
     &:nth-child(7) {
-      left: -38px;
-      @media (max-width: $breakpoint992) {
-        left: -28px;
+      margin-right: 20%;
+      @media (max-width: $breakpoint576) {
+        margin-right: 15%;
+      }
+      @media (max-width: $breakpoint480) {
+        margin-right: 10%;
       }
     }
   }
@@ -509,6 +649,52 @@ button {
       opacity:0;
       font-size: 20px;
       line-height: 1;
+    }
+  }
+}
+
+// ========================== [ Image styles ] ==========================
+.img {
+  &-shape {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  &-pic {
+    max-width: 100%;
+  }
+}
+
+// ========================== [ Banner styles ] ==========================
+* ~ .banner {
+  margin-top: 36px;
+}
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding: 55px 40px;
+  border-radius: 20px;
+  background: #FFF;
+  box-shadow: 0px 4px 20px 0px rgba(151, 173, 186, 0.25);
+  @media (max-width: $breakpoint1200) {
+    gap: 20px;
+    padding: 30px;
+  }
+  @media (max-width: $breakpoint992) {
+    flex-wrap: wrap;
+  }
+  @media (max-width: $breakpoint768) {
+    padding: 15px;
+  }
+  &__img {
+    width: 155px;
+    height: 155px;
+    @media (max-width: $breakpoint992) {
+      width: 110px;
+      height: 110px;
     }
   }
 }

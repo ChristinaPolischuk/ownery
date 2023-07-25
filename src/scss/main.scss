@@ -1,8 +1,5 @@
 // Global SCSS-files imports
-@import './new_design/vars';
-@import './new_design/fonts';
-@import './new_design/reset';
-@import './new_design/global';
+@import './new_design/vars', './new_design/fonts', './new_design/reset', './new_design/global';
 
 // Sections or Pages SCSS-files imports
 @import './new_design/header';
