@@ -476,6 +476,9 @@ button {
     }
     @media (max-width: $breakpoint768) {
       flex-direction: column;
+      & ~ * {
+        margin-top: 36px;
+      }
     }
   }
   &__content {
@@ -519,6 +522,13 @@ button {
       width: 60%;
     }
     @media (max-width: $breakpoint768) {
+      width: 100%;
+    }
+  }
+  &__slides {
+    width: 45%;
+    @media (max-width: $breakpoint768) {
+      order: 2;
       width: 100%;
     }
   }
@@ -914,6 +924,39 @@ button {
   }
 }
 
+// ========================== [ Img-slides styles ] ==========================
+.img-slides {
+  display: flex;
+  flex-wrap: wrap;
+}
+.img-slide {
+  position: relative;
+  &:nth-child(1) {
+    width: 65%;
+  }
+  &:nth-child(2) {
+    width: 35%;
+    margin-top: 15%;
+    right: 5%;
+  }
+  &:nth-child(3) {
+    width: 50%;
+    margin-top: 5%;
+  }
+  &:nth-child(4) {
+    width: 35%;
+    margin-top: -5%;
+    left: 5%;
+  }
+  &:nth-child(5) {
+    width: 40%;
+    margin-top: -10%;
+    left: 40%;
+  }
+  &__pic {
+    width: 100%;
+  }
+}
 
 
 // ========================== [ Animations styles ] ==========================

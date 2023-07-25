@@ -697,6 +697,10 @@ button {
   width: 55%;
 }
 
+.section__slides {
+  width: 45%;
+}
+
 .vehicle-types {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1022,6 +1026,49 @@ button {
 
 .card__content--right {
   right: 10%;
+}
+
+.img-slides {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.img-slide {
+  position: relative;
+}
+
+.img-slide:nth-child(1) {
+  width: 65%;
+}
+
+.img-slide:nth-child(2) {
+  width: 35%;
+  margin-top: 15%;
+  right: 5%;
+}
+
+.img-slide:nth-child(3) {
+  width: 50%;
+  margin-top: 5%;
+}
+
+.img-slide:nth-child(4) {
+  width: 35%;
+  margin-top: -5%;
+  left: 5%;
+}
+
+.img-slide:nth-child(5) {
+  width: 40%;
+  margin-top: -10%;
+  left: 40%;
+}
+
+.img-slide__pic {
+  width: 100%;
 }
 
 @-webkit-keyframes modal {
@@ -1459,6 +1506,10 @@ button {
             flex-direction: column;
   }
 
+  .section__inner ~ * {
+    margin-top: 36px;
+  }
+
   .section__content {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -1480,6 +1531,13 @@ button {
   }
 
   .section__img-content {
+    width: 100%;
+  }
+
+  .section__slides {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
     width: 100%;
   }
 
