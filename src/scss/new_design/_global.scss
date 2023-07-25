@@ -88,6 +88,7 @@ button {
   }
 }
 .title {
+  margin-bottom: 5px;
   font-size: 40px;
   font-weight: 600;
   line-height: 1.2;
@@ -97,18 +98,38 @@ button {
   @media (max-width: $breakpoint992) {
     font-size: 28px;
   }
+  @media (max-width: $breakpoint576) {
+    font-size: 24px;
+  }
+}
+.title-s {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.4;
+  @media (max-width: $breakpoint992) {
+    font-size: 24px;
+  }
+  @media (max-width: $breakpoint576) {
+    font-size: 20px;
+  }
 }
 
 // ========================== [ Text styles ] ==========================
-.text-s {
+.text {
   font-size: 20px;
+  @media (max-width: $breakpoint992) {
+    font-size: 18px;
+  }
+  @media (max-width: $breakpoint576) {
+    font-size: 16px;
+  }
 }
 .text-l {
   font-size: 22px;
   @media (max-width: $breakpoint1200) {
     font-size: 18px;
   }
-  @media (max-width: $breakpoint768) {
+  @media (max-width: $breakpoint576) {
     font-size: 16px;
   }
 }
@@ -134,6 +155,10 @@ button {
   @media (max-width: $breakpoint992) {
     font-size: 18px;
   }
+}
+.description-s {
+  font-size: 18px;
+  font-weight: 500;
 }
 .description-l {
   font-size: 26px;
@@ -176,6 +201,13 @@ button {
   }
   &:active {
     background-color: darken($accentColor, 15%);
+  }
+  &--white {
+    background-color: #fff;
+    color: $accentColor;
+    &:active {
+      background-color: #fff;
+    }
   }
   &__text {
     position: relative;
@@ -226,6 +258,42 @@ button {
     fill: none;
     stroke: $accentColor;
     transition: transform .4s;
+  }
+}
+
+.search-form-l {
+  width: 100%;
+  position: relative;
+  &__field {
+    padding: 0 240px 0 40px;
+    width: 100%;
+    height: 60px;
+    border: 1px solid transparent;
+    border-radius: 60px;
+    transition: border-color .3s;
+    font-size: 20px;
+    font-weight: 400;
+    @media (max-width: $breakpoint992) {
+      padding: 0 170px 0 20px;
+    }
+    @media (max-width: $breakpoint480) {
+      padding: 0 15px;
+    }
+    &:focus {
+      border-color: $accentColor;
+      outline: none;
+    }
+    &::placeholder {
+      color: $darkGrey;
+    }
+  }
+  &__btn {
+    position: absolute;
+    right: 0;
+    @media (max-width: $breakpoint480) {
+      position: static;
+      margin-top: 20px;
+    }
   }
 }
 
@@ -385,9 +453,18 @@ button {
   @media (max-width: $breakpoint768) {
     padding: 35px 0;
   }
+  &--bg {
+    background-color: $accentColorLight;
+  }
   &--bg-accent {
     background-color: $accentColor;
     color: #fff;
+  }
+  &__header {
+    margin-bottom: 45px;
+  }
+  &__footer {
+    margin-top: 45px;
   }
   &__inner {
     display: flex;
@@ -408,6 +485,7 @@ button {
     gap: 15px;
     width: 55%;
     @media (max-width: $breakpoint768) {
+      order: 2;
       width: 100%;
     }
   }
@@ -429,9 +507,10 @@ button {
     width: 45%;
     position: relative;
     @media (max-width: $breakpoint768) {
+      order: 1;
       width: 100%;
       max-width: 495px;
-      margin: 0 auto;
+      margin: 0 auto 30px;
     }
   }
   &__img-content {
@@ -657,12 +736,17 @@ button {
 .img {
   &-shape {
     position: absolute;
-    z-index: -1;
     bottom: 0;
     left: 0;
     right: 0;
+    width: 100%;
+    height: 100%;
   }
   &-pic {
+    position: relative;
+    width: 80%;
+  }
+  &-shaped {
     max-width: 100%;
   }
 }
@@ -674,7 +758,7 @@ button {
 .banner {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 30px;
   padding: 55px 40px;
   border-radius: 20px;
   background: #FFF;
@@ -697,8 +781,142 @@ button {
       height: 110px;
     }
   }
+  &__title {
+    max-width: 230px;
+    word-wrap: break-word;
+    @media (max-width: $breakpoint992) {
+      max-width: max-content;
+    }
+  }
 }
 
+// ========================== [ Lists styles ] ==========================
+.icon-list {
+  &__item {
+    display: flex;
+    gap: 18px;
+  }
+  &__item + &__item {
+    margin-top: 35px;
+  }
+  &__pic-wrapper {
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 87px;
+    height: 87px;
+    border-radius: 50%;
+    background-color: #fff;
+    @media (max-width: $breakpoint576) {
+      width: 67px;
+      height: 67px;
+    }
+  }
+  &__pic {
+    width: 45px;
+    height: 45px;
+    @media (max-width: $breakpoint576) {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+.checked-list ~ * {
+  margin-top: 30px;
+}
+.checked-list {
+  &__item {
+    position: relative;
+    padding-left: 30px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      background-image: url("../img/general/tick_circle.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  &__item + &__item {
+    margin-top: 10px;
+  }
+}
+
+// ========================== [ Card styles ] ==========================
+.cards {
+  @media (max-width: $breakpoint480) {
+    margin: 0 -15px;
+  }
+}
+.card {
+  display: flex;
+  align-items: center;
+  @media (max-width: $breakpoint768) {
+    flex-direction: column;
+  }
+  & + & {
+    margin-top: 120px;
+    @media (max-width: $breakpoint992) {
+      margin-top: 60px;
+    }
+    @media (max-width: $breakpoint768) {
+      margin-top: 0;
+    }
+  }
+  &__img {
+    flex: none;
+    width: 55%;
+    @media (max-width: $breakpoint768) {
+      flex-direction: column;
+      width: 100%;
+      max-width: 390px;
+    }
+    @media (max-width: $breakpoint480) {
+      max-width: 100%;
+    }
+    &-pic {
+      width: 100%;
+    }
+  }
+  &__content {
+    position: relative;
+    width: 45%;
+    padding: 40px 55px;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 4px 20px 0px rgba(151, 173, 186, 0.25);
+    @media (max-width: $breakpoint768) {
+      order: 2;
+      top: -60px;
+      padding: 30px 25px;
+      width: 100%;
+      max-width: 320px;
+    }
+    @media (max-width: $breakpoint480) {
+      max-width: calc(100% - 30px);
+    }
+    &--left {
+      left: 10%;
+      @media (max-width: $breakpoint768) {
+        left: 0;
+      }
+    }
+    &--right {
+      right: 10%;
+      @media (max-width: $breakpoint768) {
+        right: 0;
+      }
+    }
+  }
+}
+
+
+
+// ========================== [ Animations styles ] ==========================
 @keyframes modal {
 	from {
 		transform: translateY(-100%) rotateX(30deg);
@@ -707,8 +925,6 @@ button {
 		transform: translateY(0) rotateX(0deg);
 	}
 }
-
-// ========================== [ Animations styles ] ==========================
 @keyframes fade {
     0% {
         opacity: 0;
@@ -718,7 +934,6 @@ button {
         opacity: 1;
     }
 }
-
 @keyframes shake {
   25% {
     transform: rotate(3deg);
