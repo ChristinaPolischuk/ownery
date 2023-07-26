@@ -56,6 +56,10 @@ button {
     font-family: $fontMain;
 }
 
+svg.stroke {
+  fill: none;
+}
+
 .wrapper {
     height: 100%;
     display: flex;
@@ -154,6 +158,7 @@ button {
   }
   @media (max-width: $breakpoint992) {
     font-size: 18px;
+    line-height: 1.3;
   }
 }
 .description-s {
@@ -462,6 +467,9 @@ button {
   }
   &__header {
     margin-bottom: 45px;
+    @media (max-width: $breakpoint768) {
+      margin-bottom: 30px;
+    }
   }
   &__footer {
     margin-top: 45px;
@@ -557,7 +565,6 @@ button {
       width: 54px;
       height: 54px;
       &.stroke {
-        fill: none;
         stroke: $accentColor;
         stroke-width: 2px;
       }
@@ -957,7 +964,107 @@ button {
     width: 100%;
   }
 }
+// ========================== [ Contact list styles ] ==========================
+.contact-list {
+  display: flex;
+  gap: 15px;
+  &__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  &__icon {
+    margin: 0 auto 22px;
+    width: 98px;
+    height: 98px;
+    @media (max-width: $breakpoint992) {
+      width: 78px;
+      height: 78px;
+    }
+    @media (max-width: $breakpoint768) {
+      margin-bottom: 10px;
+      width: 58px;
+      height: 58px;
+    }
+    @media (max-width: $breakpoint480) {
+      width: 42px;
+      height: 42px;
+    }
+  }
+  &__title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.4;
+    @media (max-width: $breakpoint992) {
+      font-size: 36px;
+    }
+    @media (max-width: $breakpoint768) {
+      font-size: 28px;
+    }
+    @media (max-width: $breakpoint576) {
+      font-size: 18px;
+    }
+  }
+  &__text {
+    color: $darkGrey;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+    @media (max-width: $breakpoint992) {
+      font-size: 18px;
+    }
+    @media (max-width: $breakpoint768) {
+      font-size: 16px;
+    }
+    @media (max-width: $breakpoint576) {
+      font-size: 14px;
+    }
+  }
+}
 
+// ========================== [ Social icons styles ] ==========================
+.social-icons {
+  display: flex;
+  gap: 20px;
+  &__icon {
+    width: 24px;
+    height: 24px;
+    &.stroke {
+      stroke: #fff;
+    }
+  }
+}
+
+// ========================== [ Footer styles ] ==========================
+.footer {
+  background-color: $dark;
+  color: #fff;
+  &__main {
+    padding: 70px 0 40px;
+  }
+  &__inner {
+    display: flex;
+    gap: 75px;
+  }
+  &__item {
+    flex: 1;
+  }
+  &__title {
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: normal;
+  }
+  &__links {
+    display: flex;
+    flex-direction: column;
+  }
+  &__link + &__link {
+    margin-top: 5px;
+  }
+}
 
 // ========================== [ Animations styles ] ==========================
 @keyframes modal {
