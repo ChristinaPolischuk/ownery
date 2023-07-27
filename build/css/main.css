@@ -1115,19 +1115,67 @@ svg.stroke {
   line-height: normal;
 }
 
-.social-icons {
+.socials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
 }
 
-.social-icons__icon {
-  width: 24px;
-  height: 24px;
+.socials__link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.social-icons__icon.stroke {
+.socials__link:hover::before {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+.socials__link:hover .socials__icon {
+  -webkit-transform: scale(0.75);
+      -ms-transform: scale(0.75);
+          transform: scale(0.75);
+}
+
+.socials__link::before {
+  position: absolute;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  content: "";
+  width: 45px;
+  height: 45px;
+  border: 1px solid;
+  border-color: #fff;
+  border-radius: 100%;
+  display: block;
+  -webkit-transition: -webkit-transform 265ms ease-out;
+  transition: -webkit-transform 265ms ease-out;
+  -o-transition: transform 265ms ease-out;
+  transition: transform 265ms ease-out;
+  transition: transform 265ms ease-out, -webkit-transform 265ms ease-out;
+}
+
+.socials__icon {
+  width: 24px;
+  height: 24px;
+  -webkit-transition: -webkit-transform 265ms ease-out;
+  transition: -webkit-transform 265ms ease-out;
+  -o-transition: transform 265ms ease-out;
+  transition: transform 265ms ease-out;
+  transition: transform 265ms ease-out, -webkit-transform 265ms ease-out;
+}
+
+.socials__icon.stroke {
   stroke: #fff;
 }
 
@@ -1172,6 +1220,39 @@ svg.stroke {
 
 .footer__link + .footer__link {
   margin-top: 5px;
+}
+
+.footer__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  left: 0;
+  -webkit-transition: left ease 0.4s;
+  -o-transition: left ease 0.4s;
+  transition: left ease 0.4s;
+}
+
+.footer__link:hover {
+  left: 10px;
+}
+
+.footer__link:hover::before {
+  left: -10px;
+  opacity: 1;
+}
+
+.footer__link::before {
+  content: "→";
+  -webkit-transition: left ease 0.5s;
+  -o-transition: left ease 0.5s;
+  transition: left ease 0.5s;
+  position: absolute;
+  top: 3px;
+  left: -15px;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1;
 }
 
 @-webkit-keyframes modal {

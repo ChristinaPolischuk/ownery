@@ -1025,12 +1025,38 @@ svg.stroke {
 }
 
 // ========================== [ Social icons styles ] ==========================
-.social-icons {
+.socials {
   display: flex;
   gap: 20px;
+  &__link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      &::before {
+        transform: scale(1);
+      }
+      .socials__icon {
+        transform: scale(.75);
+      }
+    }
+    &::before {
+      position: absolute;
+      transform: scale(0);
+      content: "";
+      width: 45px;
+      height: 45px;
+      border: 1px solid;
+      border-color: #fff;
+      border-radius: 100%;
+      display: block;
+      transition: transform 265ms ease-out;
+    }
+  }
   &__icon {
     width: 24px;
     height: 24px;
+    transition: transform 265ms ease-out;
     &.stroke {
       stroke: #fff;
     }
@@ -1063,6 +1089,29 @@ svg.stroke {
   }
   &__link + &__link {
     margin-top: 5px;
+  }
+  &__link {
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: left ease .4s;
+    &:hover {
+      left: 10px;
+      &::before {
+        left: -10px;
+        opacity: 1;
+      }
+    }
+    &::before {
+      content: "→";
+      transition: left ease .5s;
+      position:absolute;
+      top: 3px;
+      left:-15px;
+      opacity:0;
+      font-size: 20px;
+      line-height: 1;
+    }
   }
 }
 
