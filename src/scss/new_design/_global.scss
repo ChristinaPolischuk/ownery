@@ -1063,58 +1063,6 @@ svg.stroke {
   }
 }
 
-// ========================== [ Footer styles ] ==========================
-.footer {
-  background-color: $dark;
-  color: #fff;
-  &__main {
-    padding: 70px 0 40px;
-  }
-  &__inner {
-    display: flex;
-    gap: 75px;
-  }
-  &__item {
-    flex: 1;
-  }
-  &__title {
-    margin-bottom: 15px;
-    font-size: 22px;
-    font-weight: 700;
-    line-height: normal;
-  }
-  &__links {
-    display: flex;
-    flex-direction: column;
-  }
-  &__link + &__link {
-    margin-top: 5px;
-  }
-  &__link {
-    display: flex;
-    position: relative;
-    left: 0;
-    transition: left ease .4s;
-    &:hover {
-      left: 10px;
-      &::before {
-        left: -10px;
-        opacity: 1;
-      }
-    }
-    &::before {
-      content: "→";
-      transition: left ease .5s;
-      position:absolute;
-      top: 3px;
-      left:-15px;
-      opacity:0;
-      font-size: 20px;
-      line-height: 1;
-    }
-  }
-}
-
 // ========================== [ Animations styles ] ==========================
 @keyframes modal {
 	from {
