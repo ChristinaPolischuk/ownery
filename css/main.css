@@ -1586,6 +1586,170 @@ svg.stroke {
   border-radius: 40px;
 }
 
+.language {
+  position: relative;
+}
+
+.language.is-opened .language-btn::before {
+  -webkit-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+.language.is-opened .language-btn::after {
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.language.is-opened .language-dropdown {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.language-btn {
+  position: relative;
+  z-index: 10;
+  padding-right: 18px;
+  background-color: transparent;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+.language-btn::before,
+.language-btn::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 0;
+  width: 2px;
+  height: 8px;
+  background-color: #fff;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  -o-transition: transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
+
+.language-btn::before {
+  right: 5px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.language-btn::after {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.language-icon-globe {
+  margin-right: 9px;
+  width: 21px;
+  height: 21px;
+  fill: #fff;
+}
+
+.language-dropdown {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  right: -5px;
+  width: 150px;
+  max-height: 250px;
+  -webkit-transform: translateY(-50px);
+      -ms-transform: translateY(-50px);
+          transform: translateY(-50px);
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  border-radius: 20px;
+  -webkit-filter: drop-shadow(0px 4px 15px rgba(151, 173, 186, 0.25));
+          filter: drop-shadow(0px 4px 15px rgba(151, 173, 186, 0.25));
+  pointer-events: none;
+  -webkit-transition: visibility 0.4s, opacity 0.4s, -webkit-transform 0.4s;
+  transition: visibility 0.4s, opacity 0.4s, -webkit-transform 0.4s;
+  -o-transition: transform 0.4s, visibility 0.4s, opacity 0.4s;
+  transition: transform 0.4s, visibility 0.4s, opacity 0.4s;
+  transition: transform 0.4s, visibility 0.4s, opacity 0.4s, -webkit-transform 0.4s;
+}
+
+.language-dropdown::before {
+  content: "";
+  position: absolute;
+  top: calc(100% - 9px);
+  right: 35px;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.language-dropdown__inner {
+  padding: 10px 15px;
+}
+
+.language-dropdown__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  left: 0;
+  -webkit-transition: left ease 0.4s;
+  -o-transition: left ease 0.4s;
+  transition: left ease 0.4s;
+  font-size: 14px;
+  color: #2D2F35;
+}
+
+.language-dropdown__link:hover {
+  left: 10px;
+}
+
+.language-dropdown__link:hover::before {
+  left: -10px;
+  opacity: 1;
+}
+
+.language-dropdown__link::before {
+  content: "→";
+  -webkit-transition: left ease 0.5s;
+  -o-transition: left ease 0.5s;
+  transition: left ease 0.5s;
+  position: absolute;
+  top: 3px;
+  left: -15px;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.language-dropdown .mCSB_scrollTools .mCSB_draggerContainer {
+  top: 10px;
+  bottom: 10px;
+}
+
+.language-dropdown .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: #0077CC;
+}
+
+.language-dropdown .mCSB_scrollTools .mCSB_draggerRail {
+  width: 4px;
+  background-color: #C8CFE2;
+}
+
 @media (max-width: 1449.98px) {
   .container {
     max-width: 1200px;
@@ -1883,6 +2047,10 @@ svg.stroke {
     font-size: 16px;
   }
 
+  .footer__main {
+    padding: 50px 0 20px;
+  }
+
   .footer__bottom {
     padding: 30px 0;
   }
@@ -1902,6 +2070,15 @@ svg.stroke {
 
   .footer-search-form {
     margin-left: 0;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  .language {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
 }
 
