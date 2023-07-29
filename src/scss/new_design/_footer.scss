@@ -30,7 +30,7 @@
     }
   }
   &__title {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     font-size: 22px;
     font-weight: 700;
     line-height: normal;
@@ -40,13 +40,24 @@
     flex-direction: column;
   }
   &__link + &__link {
-    margin-top: 5px;
+    margin-top: 20px;
+    @media (max-width: $breakpoint1200) {
+      margin-top: 15px;
+    }
   }
   &__link {
     display: flex;
     position: relative;
     left: 0;
     transition: left ease .4s;
+    font-size: 20px;
+    line-height: normal;
+    @media (max-width: $breakpoint1200) {
+      font-size: 18px;
+    }
+    @media (max-width: $breakpoint992) {
+      font-size: 16px;
+    }
     &:hover {
       left: 10px;
       &::before {

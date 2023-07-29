@@ -70,6 +70,10 @@ svg.stroke {
     flex: 1;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 // ========================== [ Logo styles ] ==========================
 .logo {
   &__img {
@@ -92,14 +96,16 @@ svg.stroke {
   }
 }
 .title {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   font-size: 40px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.43;
   @media (max-width: $breakpoint1200) {
+    margin-bottom: 10px;
     font-size: 36px;
   }
   @media (max-width: $breakpoint992) {
+    margin-bottom: 5px;
     font-size: 28px;
   }
   @media (max-width: $breakpoint576) {
@@ -107,6 +113,7 @@ svg.stroke {
   }
 }
 .title-s {
+  margin-bottom: 10px;
   font-size: 26px;
   font-weight: 600;
   line-height: 1.4;
@@ -168,6 +175,7 @@ svg.stroke {
 .description-l {
   font-size: 26px;
   font-weight: 500;
+  line-height: normal;
   @media (max-width: $breakpoint1200) {
     font-size: 22px;
   }
@@ -206,6 +214,9 @@ svg.stroke {
   }
   &:active {
     background-color: darken($accentColor, 15%);
+  }
+  &--l {
+    padding: 0 64px;
   }
   &--white {
     background-color: #fff;
@@ -267,17 +278,22 @@ svg.stroke {
 }
 
 .search-form-l {
+  margin: 0 auto;
+  max-width: 990px;
   width: 100%;
   position: relative;
   &__field {
-    padding: 0 240px 0 40px;
+    padding: 0 240px 0 44px;
     width: 100%;
-    height: 60px;
+    height: 80px;
     border: 1px solid transparent;
     border-radius: 60px;
     transition: border-color .3s;
     font-size: 20px;
     font-weight: 400;
+    @media (max-width: $breakpoint1200) {
+      height: 60px;
+    }
     @media (max-width: $breakpoint992) {
       padding: 0 170px 0 20px;
     }
@@ -295,6 +311,14 @@ svg.stroke {
   &__btn {
     position: absolute;
     right: 0;
+    width: 289px;
+    height: 100%;
+    @media (max-width: $breakpoint1200) {
+      height: 60px;
+    }
+    @media (max-width: $breakpoint576) {
+      width: auto;
+    }
     @media (max-width: $breakpoint480) {
       position: static;
       margin-top: 20px;
@@ -454,7 +478,10 @@ svg.stroke {
 
 // ========================== [ Section styles ] ==========================
 .section {
-  padding: 60px 0;
+  padding: 120px 0;
+  @media (max-width: $breakpoint1200) {
+    padding: 60px 0;
+  }
   @media (max-width: $breakpoint768) {
     padding: 35px 0;
   }
@@ -466,21 +493,27 @@ svg.stroke {
     color: #fff;
   }
   &__header {
-    margin-bottom: 45px;
+    margin-bottom: 60px;
+    @media (max-width: $breakpoint992) {
+      margin-bottom: 40px;
+    }
     @media (max-width: $breakpoint768) {
       margin-bottom: 30px;
     }
   }
   &__footer {
-    margin-top: 45px;
+    margin-top: 60px;
+    @media (max-width: $breakpoint768) {
+      margin-top: 30px;
+    }
   }
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 30px;
+    gap: 85px;
     @media (max-width: $breakpoint992) {
-      gap: 20px;
+      gap: 40px;
     }
     @media (max-width: $breakpoint768) {
       flex-direction: column;
@@ -493,11 +526,21 @@ svg.stroke {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
+    gap: 30px;
     width: 55%;
+    @media (max-width: $breakpoint1200) {
+      // order: 2;
+      width: 100%;
+      gap: 15px;
+    }
     @media (max-width: $breakpoint768) {
       order: 2;
       width: 100%;
+    }
+  }
+  &__content-header-desktop {
+    @media (max-width: $breakpoint768) {
+      display: none;
     }
   }
   &__box {
@@ -544,6 +587,12 @@ svg.stroke {
       order: 2;
       width: 100%;
     }
+  }
+}
+.section-main {
+  padding: 60px 0;
+  @media (max-width: $breakpoint1200) {
+    padding: 30px 0;
   }
 }
 // ========================== [ Vehicle types styles ] ==========================
@@ -689,8 +738,7 @@ svg.stroke {
     height: 100%;
   }
   &-pic {
-    position: relative;
-    width: 80%;
+    width: 100%;
   }
   &-shaped {
     max-width: 100%;
@@ -704,7 +752,7 @@ svg.stroke {
 .banner {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
   padding: 55px 40px;
   border-radius: 20px;
   background: #FFF;
@@ -767,6 +815,12 @@ svg.stroke {
       height: 35px;
     }
   }
+  &__title {
+    margin-bottom: 15px;
+  }
+}
+* ~ .checked-list {
+  margin-top: 30px;
 }
 .checked-list ~ * {
   margin-top: 30px;
@@ -775,10 +829,11 @@ svg.stroke {
   &__item {
     position: relative;
     padding-left: 30px;
+    line-height: 1.4;
     &::before {
       content: '';
       position: absolute;
-      top: 12px;
+      top: 7px;
       left: 0;
       width: 15px;
       height: 15px;
@@ -788,74 +843,74 @@ svg.stroke {
     }
   }
   &__item + &__item {
-    margin-top: 10px;
+    margin-top: 30px;
   }
 }
 
 // ========================== [ Card styles ] ==========================
 .cards {
-  @media (max-width: $breakpoint480) {
+  @media (max-width: $breakpoint576) {
     margin: 0 -15px;
   }
 }
 .card {
   display: flex;
   align-items: center;
+  min-height: 680px;
+  padding: 30px 0;
+  @media (max-width: $breakpoint1200) {
+    min-height: 580px;
+  }
+  @media (max-width: $breakpoint992) {
+    min-height: 460px;
+  }
   @media (max-width: $breakpoint768) {
-    flex-direction: column;
+    padding: 320px 0 0 0;
+  }
+  &--content-left, &--content-right {
+    background-repeat: no-repeat;
+    background-size: contain;
+    @media (max-width: $breakpoint768) {
+      background-size: auto 400px;
+      background-position: center top;
+      justify-content: center;
+    }
+  }
+  &--content-left {
+    justify-content: flex-end;
+    background-position: left center;
+  }
+  &--content-right {
+    justify-content: flex-start;
+    background-position: right center;
   }
   & + & {
     margin-top: 120px;
-    @media (max-width: $breakpoint992) {
+    @media (max-width: $breakpoint1200) {
       margin-top: 60px;
     }
-    @media (max-width: $breakpoint768) {
-      margin-top: 0;
-    }
-  }
-  &__img {
-    flex: none;
-    width: 55%;
-    @media (max-width: $breakpoint768) {
-      flex-direction: column;
-      width: 100%;
-      max-width: 390px;
-    }
-    @media (max-width: $breakpoint480) {
-      max-width: 100%;
-    }
-    &-pic {
-      width: 100%;
-    }
+    // @media (max-width: $breakpoint768) {
+    //   margin-top: 30px;
+    // }
   }
   &__content {
     position: relative;
+    max-width: 645px;
     width: 45%;
     padding: 40px 55px;
     border-radius: 20px;
     background: #FFF;
     box-shadow: 0px 4px 20px 0px rgba(151, 173, 186, 0.25);
-    @media (max-width: $breakpoint768) {
-      order: 2;
-      top: -60px;
+    @media (max-width: $breakpoint1200) {
+      width: 55%;
       padding: 30px 25px;
+    }
+    @media (max-width: $breakpoint768) {
       width: 100%;
-      max-width: 320px;
+      max-width: 420px;
     }
-    @media (max-width: $breakpoint480) {
-      max-width: calc(100% - 30px);
-    }
-    &--left {
-      left: 10%;
-      @media (max-width: $breakpoint768) {
-        left: 0;
-      }
-    }
-    &--right {
-      right: 10%;
-      @media (max-width: $breakpoint768) {
-        right: 0;
-      }
+    @media (max-width: $breakpoint576) {
+      margin: 0 15px;
     }
   }
 }
