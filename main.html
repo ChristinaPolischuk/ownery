@@ -20,7 +20,7 @@
         <!-- Header -->
         
         <!-- Main Page -->
-        <section class="section">
+        <section class="section-main">
   <div class="section__inner container">
     <div class="section__box">
       <h1 class="main-title">Vehicle Ownership Made Easy</h1>
@@ -64,10 +64,11 @@
     <h2 class="title text-black mobile">Overwhelmed by all these automotive apps, websites, and forums?</h2>
     <div class="section__inner">
       <div class="section__img">
-        <svg class="img-shape" viewBox="0 0 446 427" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.38678 108.401C40.018 28.1517 177.769 -5.64964 264.155 1.87932C349.871 9.34991 422.367 69.5241 441.898 153.266C461.348 236.66 406.236 370.304 332.35 413.593C261.407 455.158 190.323 390.741 127.757 337.318C64.012 282.887 -24.1565 185.974 7.38678 108.401Z" fill="#30A2F4"/>
-        </svg>
-        <img class="img-pic" src="img/main_page/mobile_blue.svg" alt="img" />
+        <picture>
+          <source srcset="img/main_page/mobile_blue_bg.avif" type="image/avif" />
+          <source srcset="img/main_page/mobile_blue_bg.webp" type="image/webp" />
+          <img class="img-pic" src="img/main_page/mobile_blue_bg.png" alt="img" />
+        </picture>
       </div>
       <div class="section__content">
         <h2 class="title text-black desktop">Overwhelmed by all these automotive apps, websites, and forums?</h2>
@@ -134,7 +135,7 @@
               <img class="icon-list__pic" src="img/general/mobile_card.svg" alt="pic">
             </div>
             <div class="icon-list__content">
-              <h6 class="title-s">Go beyond standard VIN history</h6>
+              <h6 class="icon-list__title title-s">Go beyond standard VIN history</h6>
               <p class="text">Show the proofs of installed accessories and expensive modifications made to up the sale price</p>
             </div>
           </li>
@@ -143,21 +144,22 @@
               <img class="icon-list__pic" src="img/general/car_checked.svg" alt="pic">
             </div>
             <div class="icon-list__content">
-              <h6 class="title-s">Show transparency to build trust</h6>
+              <h6 class="icon-list__title title-s">Show transparency to build trust</h6>
               <p class="text">Used car buyers are always suspicious, but you may show them your history of modifications to put them at ease.</p>
             </div>
           </li>
         </ul>
       </div>
       <div class="section__img">
-        <svg class="img-shape" viewBox="0 0 456 402" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M0.00670062 207.654C-1.04238 121.031 112.815 36.4467 195.358 9.88015C277.261 -16.4804 367.422 10.8645 417.904 80.4753C468.177 149.797 469.216 294.354 417.904 362.913C368.636 428.74 278.132 396.938 199.743 371.963C119.876 346.518 1.0208 291.389 0.00670062 207.654Z" fill="white"/>
-          </svg>
-        <img class="img-pic" src="img/main_page/car_mobile.png" alt="img" />
+        <picture>
+          <source srcset="img/main_page/car_mobile_bg.avif" type="image/avif" />
+          <source srcset="img/main_page/car_mobile_bg.webp" type="image/webp" />
+          <img class="img-pic" src="img/main_page/car_mobile_bg.png" alt="img" />
+        </picture>
       </div>
     </div>
     <div class="section__footer text-center">
-      <a class="btn btn--white" href="">
+      <a class="btn btn--l btn--white" href="">
         <span class="btn__text">Estimate My Vehicle</span>
       </a>
     </div>
@@ -165,7 +167,7 @@
 </section>
         <section class="section">
   <div class="container">
-    <div class="section__header text-center">
+    <div class="text-center">
       <h2 class="title mobile">Find Your Next Car</h2>
       <p class="text-l text-light mobile">Explore deals on new & used cars from dealers near you</p>
     </div>
@@ -174,8 +176,10 @@
         <img class="img-shaped" src="img/main_page/car_in_autumn_shaped.png" alt="pic">
       </div>
       <div class="section__content">
-        <h2 class="title desktop">Find Your Next Car</h2>
-        <p class="text-l text-light desktop">Explore deals on new & used cars from dealers near you</p>
+        <div class="section__content-header-desktop">
+          <h2 class="title">Find Your Next Car</h2>
+          <p class="text-l text-light">Explore deals on new & used cars from dealers near you</p>
+        </div>
         <ul class="checked-list">
           <li class="checked-list__item">
             <p class="description text-light">See options matching your expectations & desired features</p>
@@ -222,15 +226,8 @@
         <section class="section">
   <div class="container">
     <div class="cards">
-      <div class="card">
-        <div class="card__img">
-          <picture>
-            <source srcset="img/main_page/upgrade_your_ride.avif" type="image/avif" />
-            <source srcset="img/main_page/upgrade_your_ride.webp" type="image/webp" />
-            <img class="card__img-pic" src="img/main_page/upgrade_your_ride.png" alt="img" />
-          </picture>
-        </div>
-        <div class="card__content card__content--right">
+      <div class="card card--content-left" style="background-image: url(img/main_page/upgrade_your_ride.png);">
+        <div class="card__content">
           <h6 class="title-s">Upgrade Your Ride</h6>
           <p class="description-s">Ready for a custom build to make your vehicle stand out?</p>
           <ul class="checked-list">
@@ -247,10 +244,11 @@
               <p class="text text-light">Show off your ride!</p>
             </li>
           </ul>
+          <a class="btn" href="">See Ideas</a>
         </div>
       </div>
-      <div class="card">
-        <div class="card__content card__content--left">
+      <div class="card card--content-right" style="background-image: url(img/main_page/join_car_enthusiasts_community.png);">
+        <div class="card__content">
           <h6 class="title-s">Join Car Enthusiasts Community</h6>
           <p class="description-s">Got a problem with your vehicle and need advice on troubleshooting?</p>
           <ul class="checked-list">
@@ -264,13 +262,7 @@
               <p class="text text-light">Become an expert yourself</p>
             </li>
           </ul>
-        </div>
-        <div class="card__img">
-          <picture>
-            <source srcset="img/main_page/join_car_enthusiasts_community.avif" type="image/avif" />
-            <source srcset="img/main_page/join_car_enthusiasts_community.webp" type="image/webp" />
-            <img class="card__img-pic" src="img/main_page/join_car_enthusiasts_community.png" alt="img" />
-          </picture>
+          <a class="btn" href="">Ask Your Question</a>
         </div>
       </div>
     </div>
@@ -285,7 +277,7 @@
         <p class="text">We aim to make owning and managing vehicles easier. We save you time and money, making things like buying, maintaining, and selling vehicles straightforward and hassle-free.</p>
         <p class="text">But it's not all about the practical stuff. We're also here to make your vehicle journey more exciting. You can chat about cool car mods and accessories with other vehicle lovers worldwide, sharing your love for the road.</p>
         <p class="text">In short, Ownery.com is all about making your vehicle life simplified and more fun.</p>
-        <a class="btn btn--white desktop" href="">Join Us And Enjoy The Ride</a>
+        <a class="btn btn--white w-100 desktop" href="">Join Us And Enjoy The Ride</a>
       </div>
       <div class="section__slides">
         <div class="img-slides">
@@ -328,7 +320,7 @@
       </div>
     </div>
     <div class="text-center">
-      <a href="" class="btn btn--white mobile">Join Us And Enjoy The Ride</a>
+      <a href="" class="btn btn--white w-100 mobile">Join Us And Enjoy The Ride</a>
     </div>
   </div>
 </section>
@@ -354,6 +346,9 @@
         <h5 class="contact-list__title">24/7</h5>
         <p class="contact-list__text">Always available</p>
       </div>
+    </div>
+    <div class="section__footer text-center">
+      <a class="btn" href="">Contact Us</a>
     </div>
   </div>
 </section>
@@ -452,21 +447,21 @@
            <div class="language-dropdown__inner">
               <a href="" class="language-dropdown__link">English</a>
               <a href="" class="language-dropdown__link">Français</a>
-              <a href="" class="language-dropdown__link">Deutsche</a>
+              <a href="" class="language-dropdown__link">Deutsch</a>
               <a href="" class="language-dropdown__link">Italiano</a>
               <a href="" class="language-dropdown__link">Español</a>
               <a href="" class="language-dropdown__link">Polskie</a>
               <a href="" class="language-dropdown__link">Українська</a>
               <a href="" class="language-dropdown__link">English</a>
               <a href="" class="language-dropdown__link">Français</a>
-              <a href="" class="language-dropdown__link">Deutsche</a>
+              <a href="" class="language-dropdown__link">Deutsch</a>
               <a href="" class="language-dropdown__link">Italiano</a>
               <a href="" class="language-dropdown__link">Español</a>
               <a href="" class="language-dropdown__link">Polskie</a>
               <a href="" class="language-dropdown__link">Українська</a>
               <a href="" class="language-dropdown__link">English</a>
               <a href="" class="language-dropdown__link">Français</a>
-              <a href="" class="language-dropdown__link">Deutsche</a>
+              <a href="" class="language-dropdown__link">Deutsch</a>
               <a href="" class="language-dropdown__link">Italiano</a>
               <a href="" class="language-dropdown__link">Español</a>
               <a href="" class="language-dropdown__link">Polskie</a>

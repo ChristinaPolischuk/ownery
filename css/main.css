@@ -190,6 +190,10 @@ svg.stroke {
           flex: 1;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 .logo__img {
   width: 150px;
   height: 42px;
@@ -203,13 +207,14 @@ svg.stroke {
 }
 
 .title {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   font-size: 40px;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.43;
 }
 
 .title-s {
+  margin-bottom: 10px;
   font-size: 26px;
   font-weight: 600;
   line-height: 1.4;
@@ -252,6 +257,7 @@ svg.stroke {
 .description-l {
   font-size: 26px;
   font-weight: 500;
+  line-height: normal;
 }
 
 .btn {
@@ -295,6 +301,10 @@ svg.stroke {
 
 .btn:active {
   background-color: #004a80;
+}
+
+.btn--l {
+  padding: 0 64px;
 }
 
 .btn--white {
@@ -360,14 +370,16 @@ svg.stroke {
 }
 
 .search-form-l {
+  margin: 0 auto;
+  max-width: 990px;
   width: 100%;
   position: relative;
 }
 
 .search-form-l__field {
-  padding: 0 240px 0 40px;
+  padding: 0 240px 0 44px;
   width: 100%;
-  height: 60px;
+  height: 80px;
   border: 1px solid transparent;
   border-radius: 60px;
   -webkit-transition: border-color 0.3s;
@@ -405,6 +417,8 @@ svg.stroke {
 .search-form-l__btn {
   position: absolute;
   right: 0;
+  width: 289px;
+  height: 100%;
 }
 
 .user {
@@ -628,7 +642,7 @@ svg.stroke {
 }
 
 .section {
-  padding: 60px 0;
+  padding: 120px 0;
 }
 
 .section--bg {
@@ -641,11 +655,11 @@ svg.stroke {
 }
 
 .section__header {
-  margin-bottom: 45px;
+  margin-bottom: 60px;
 }
 
 .section__footer {
-  margin-top: 45px;
+  margin-top: 60px;
 }
 
 .section__inner {
@@ -658,7 +672,7 @@ svg.stroke {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  gap: 30px;
+  gap: 85px;
 }
 
 .section__content {
@@ -672,7 +686,7 @@ svg.stroke {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  gap: 15px;
+  gap: 30px;
   width: 55%;
 }
 
@@ -703,6 +717,10 @@ svg.stroke {
 
 .section__slides {
   width: 45%;
+}
+
+.section-main {
+  padding: 60px 0;
 }
 
 .vehicle-types {
@@ -861,8 +879,7 @@ svg.stroke {
 }
 
 .img-pic {
-  position: relative;
-  width: 80%;
+  width: 100%;
 }
 
 .img-shaped {
@@ -880,7 +897,7 @@ svg.stroke {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 30px;
+  gap: 40px;
   padding: 55px 40px;
   border-radius: 20px;
   background: #FFF;
@@ -933,6 +950,14 @@ svg.stroke {
   height: 45px;
 }
 
+.icon-list__title {
+  margin-bottom: 15px;
+}
+
+* ~ .checked-list {
+  margin-top: 30px;
+}
+
 .checked-list ~ * {
   margin-top: 30px;
 }
@@ -940,12 +965,13 @@ svg.stroke {
 .checked-list__item {
   position: relative;
   padding-left: 30px;
+  line-height: 1.4;
 }
 
 .checked-list__item::before {
   content: "";
   position: absolute;
-  top: 12px;
+  top: 7px;
   left: 0;
   width: 15px;
   height: 15px;
@@ -955,7 +981,7 @@ svg.stroke {
 }
 
 .checked-list__item + .checked-list__item {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .card {
@@ -965,39 +991,43 @@ svg.stroke {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  min-height: 680px;
+  padding: 30px 0;
+}
+
+.card--content-left,
+.card--content-right {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.card--content-left {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  background-position: left center;
+}
+
+.card--content-right {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background-position: right center;
 }
 
 .card + .card {
   margin-top: 120px;
 }
 
-.card__img {
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
-  width: 55%;
-}
-
-.card__img-pic {
-  width: 100%;
-}
-
 .card__content {
   position: relative;
+  max-width: 645px;
   width: 45%;
   padding: 40px 55px;
   border-radius: 20px;
   background: #FFF;
   -webkit-box-shadow: 0px 4px 20px 0px rgba(151, 173, 186, 0.25);
           box-shadow: 0px 4px 20px 0px rgba(151, 173, 186, 0.25);
-}
-
-.card__content--left {
-  left: 10%;
-}
-
-.card__content--right {
-  right: 10%;
 }
 
 .img-slides {
@@ -1464,7 +1494,7 @@ svg.stroke {
 }
 
 .footer__title {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   font-size: 22px;
   font-weight: 700;
   line-height: normal;
@@ -1481,7 +1511,7 @@ svg.stroke {
 }
 
 .footer__link + .footer__link {
-  margin-top: 5px;
+  margin-top: 20px;
 }
 
 .footer__link {
@@ -1493,6 +1523,8 @@ svg.stroke {
   -webkit-transition: left ease 0.4s;
   -o-transition: left ease 0.4s;
   transition: left ease 0.4s;
+  font-size: 20px;
+  line-height: normal;
 }
 
 .footer__link:hover {
@@ -1731,6 +1763,7 @@ svg.stroke {
   }
 
   .title {
+    margin-bottom: 10px;
     font-size: 36px;
   }
 
@@ -1746,6 +1779,23 @@ svg.stroke {
     font-size: 22px;
   }
 
+  .search-form-l__field {
+    height: 60px;
+  }
+
+  .search-form-l__btn {
+    height: 60px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section__content {
+    width: 100%;
+    gap: 15px;
+  }
+
   .section__box {
     width: auto;
     max-width: 488px;
@@ -1753,6 +1803,10 @@ svg.stroke {
 
   .section__img {
     width: auto;
+  }
+
+  .section-main {
+    padding: 30px 0;
   }
 
   .vehicle-ownership {
@@ -1769,6 +1823,19 @@ svg.stroke {
     padding: 30px;
   }
 
+  .card {
+    min-height: 580px;
+  }
+
+  .card + .card {
+    margin-top: 60px;
+  }
+
+  .card__content {
+    width: 55%;
+    padding: 30px 25px;
+  }
+
   .menu__link {
     font-size: 16px;
   }
@@ -1779,6 +1846,14 @@ svg.stroke {
 
   .footer__main-inner {
     gap: 15px;
+  }
+
+  .footer__link + .footer__link {
+    margin-top: 15px;
+  }
+
+  .footer__link {
+    font-size: 18px;
   }
 }
 
@@ -1792,6 +1867,7 @@ svg.stroke {
   }
 
   .title {
+    margin-bottom: 5px;
     font-size: 28px;
   }
 
@@ -1821,8 +1897,12 @@ svg.stroke {
     padding: 0 170px 0 20px;
   }
 
+  .section__header {
+    margin-bottom: 40px;
+  }
+
   .section__inner {
-    gap: 20px;
+    gap: 40px;
   }
 
   .section__img-content {
@@ -1858,8 +1938,8 @@ svg.stroke {
     max-width: max-content;
   }
 
-  .card + .card {
-    margin-top: 60px;
+  .card {
+    min-height: 460px;
   }
 
   .contact-list__icon {
@@ -1892,6 +1972,10 @@ svg.stroke {
             break-inside: avoid;
     margin-bottom: 30px;
   }
+
+  .footer__link {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -1917,6 +2001,10 @@ svg.stroke {
     margin-bottom: 30px;
   }
 
+  .section__footer {
+    margin-top: 30px;
+  }
+
   .section__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1933,6 +2021,10 @@ svg.stroke {
         -ms-flex-order: 2;
             order: 2;
     width: 100%;
+  }
+
+  .section__content-header-desktop {
+    display: none;
   }
 
   .section__box {
@@ -1969,41 +2061,21 @@ svg.stroke {
   }
 
   .card {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    padding: 320px 0 0 0;
   }
 
-  .card + .card {
-    margin-top: 0;
-  }
-
-  .card__img {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%;
-    max-width: 390px;
+  .card--content-left,
+  .card--content-right {
+    background-size: auto 400px;
+    background-position: center top;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .card__content {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-    top: -60px;
-    padding: 30px 25px;
     width: 100%;
-    max-width: 320px;
-  }
-
-  .card__content--left {
-    left: 0;
-  }
-
-  .card__content--right {
-    right: 0;
+    max-width: 420px;
   }
 
   .contact-list__icon {
@@ -2072,6 +2144,10 @@ svg.stroke {
     font-size: 16px;
   }
 
+  .search-form-l__btn {
+    width: auto;
+  }
+
   .vehicle-types {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -2086,6 +2162,14 @@ svg.stroke {
   .icon-list__pic {
     width: 35px;
     height: 35px;
+  }
+
+  .cards {
+    margin: 0 -15px;
+  }
+
+  .card__content {
+    margin: 0 15px;
   }
 
   .contact-list__title {
@@ -2123,18 +2207,6 @@ svg.stroke {
   .vehicle-ownership__link {
     padding: 5px 15px;
     font-size: 13px;
-  }
-
-  .cards {
-    margin: 0 -15px;
-  }
-
-  .card__img {
-    max-width: 100%;
-  }
-
-  .card__content {
-    max-width: calc(100% - 30px);
   }
 
   .contact-list__icon {
