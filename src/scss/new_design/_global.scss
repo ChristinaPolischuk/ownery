@@ -37,14 +37,17 @@ body {
     &.locked {
         overflow: hidden;
         &::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: rgba(#000, .7);
-            z-index: 2;
+          content: '';
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-image: linear-gradient( to bottom,
+          rgba(255, 255, 255, 1.0) 0%, 
+          rgba(255, 255, 255, 0.8) 40%, 
+          rgba(255, 255, 255, 0.1) 100% );
+          z-index: 2;
         }
     }
 }
@@ -328,9 +331,11 @@ svg.stroke {
 
 // ========================== [ User styles ] ==========================
 .user {
-  margin-left: 23px;
   & > *:not(:last-child) {
     margin-right: 23px;
+    @media (max-width: $breakpoint1024) {
+      margin-right: 15px;
+    }
   }
   &__link {
     font-size: 16px;
@@ -401,20 +406,18 @@ svg.stroke {
 	opacity: 0;
 	background-color: rgba(0, 0, 0, 0.7);
 	transition: 0.2s;
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 	&__inner {
 		height: 100%;
 		padding: 30px;
-
-        display: flex;
+    display: flex;
 		align-items: center;
 		justify-content: center;
 		margin: auto;
 		// overflow-x: hidden;
-        perspective: 500px;
+    perspective: 500px;
 	}
 	&.modal--active {
 		visibility: visible;
