@@ -27,6 +27,13 @@
       display: none;
     }
   }
+  &__mobile-search-btn {
+    display: none;
+    @media (max-width: $breakpoint992) {
+      display: block;
+      margin-left: auto;
+    }
+  }
   &__user {
     margin-left: 23px;
     @media (max-width: $breakpoint1024) {
@@ -174,7 +181,7 @@
 $elastic: (
   position: right,
   width: 300,
-  backgroundColor: $accentColorLight,
+  backgroundColor: #fff,
   boxShadow: 0px 4px 20px 0px rgba(151, 173, 186, 0.25),
   duration: 300,
 );
@@ -216,12 +223,22 @@ $duration: map-get($elastic, 'duration');
       border-radius: 0;
   }
 }
+// ========================= [ Mobile search styles ] =========================
+.mobile-search-btn {
+  background-color: transparent;
+  &__icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: $accentColor;
+  }
+}
 
 .mobile-menu {
   display: none;
   @media (max-width: $breakpoint992) {
     display: block;
-    margin-left: auto;
+    margin-left: 28px;
   }
   &.is-opened {
     .hamburger {
@@ -265,8 +282,9 @@ $duration: map-get($elastic, 'duration');
   &__dropdown {
     position: fixed;
     width: $width*1px;
-    height: calc(100% - 82px);
+    height: calc(100vh - 82px);
     top: 82px;
+    overflow: hidden;
     // overflow-y: auto;
     // overflow-x: hidden;
     opacity: 0;
@@ -296,9 +314,10 @@ $duration: map-get($elastic, 'duration');
     &::after {
       content: '';
       position: absolute;
-      width: 0;
-      height: 100%;
       top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       @if ($position == right) {
         left: 0;
       } @else if ($position == left) {
@@ -308,6 +327,12 @@ $duration: map-get($elastic, 'duration');
       border-radius: 50%;
       z-index: -1;
       transition: all $duration*1ms linear;
+    }
+    .mCSB_inside>.mCSB_container {
+      margin-right: 5px;
+    }
+    .mCSB_container {
+      height: 100%;
     }
     .mCSB_scrollTools .mCSB_draggerContainer {
       top: 10px;
@@ -323,8 +348,12 @@ $duration: map-get($elastic, 'duration');
   }
   &__navlist {
     border-top: 1px solid $greyColor;
+    background-color: $accentColorLight;
   }
   &__navitem, &__subitem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid $greyColor;
     &.dropdown.sub-open {
       & > .mobile-menu__submenu {
@@ -333,28 +362,35 @@ $duration: map-get($elastic, 'duration');
     }
   }
   &__navlink, &__sublink {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 20px;
     font-size: 18px;
     line-height: normal;
     font-weight: 500;
   }
   &__navtrigger, &__subtrigger {
-    width: 10px;
-    height: 10px;
-    border-right: 2px solid $accentColor;
-    border-bottom: 2px solid $accentColor;
-    transform: rotate(-45deg);
+    position: relative;
+    width: 42px;
+    height: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid $accentColor;
+      border-bottom: 2px solid $accentColor;
+      transform: rotate(-45deg);
+    }
   }
   &__submenu {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
+    bottom: 0;
     background: $accentColorLight;
-    height: 100%;
     z-index: 1;
     transform: translateX(100%);
     transition: transform 350ms;
@@ -382,6 +418,132 @@ $duration: map-get($elastic, 'duration');
     border-right: 2px solid $accentColor;
     border-bottom: 2px solid $accentColor;
     transform: rotate(135deg);
+  }
+  &__user {
+    margin: 34px 0;
+    padding: 0 20px;
+    text-align: center;
+  }
+  &__language {
+    position: relative;
+    color: $darkGrey;
+    &-wrap {
+      padding: 0 20px;
+      text-align: center;
+    }
+    &.is-opened {
+      .mobile-menu__language-btn {
+        &::before {
+          transform: rotate(-135deg);
+        }
+        &::after {
+          transform: rotate(135deg);
+        }
+      }
+      .mobile-menu__language-dropdown {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+    }
+    &-btn {
+      position: relative;
+      z-index: 10;
+      padding-right: 18px;
+      font-weight: 500;
+      background-color: transparent;
+      display: inline-flex;
+      align-items: center;
+      color: $darkGrey;
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 8px;
+        right: 0;
+        width: 2px;
+        height: 8px;
+        background-color: $darkGrey;
+        transition: transform .4s;
+      }
+      &::before {
+        right: 5px;
+        transform: rotate(-45deg);
+      }
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+    &-icon-globe {
+      margin-right: 9px;
+      width: 21px;
+      height: 21px;
+      fill: $darkGrey;
+    } 
+    &-dropdown {
+      position: absolute;
+      bottom: calc(100% + 10px);
+      right: -5px;
+      width: 150px;
+      max-height: 250px;
+      transform: translateY(-50px);
+      opacity: 0;
+      visibility: hidden;
+      background: #fff;
+      border-radius: 20px;
+      filter: drop-shadow(0px 4px 15px rgba(151, 173, 186, 0.25));
+      pointer-events: none;
+      transition: transform .4s, visibility .4s, opacity .4s;
+      &::before {
+        content: '';
+        position: absolute;
+        top: calc(100% - 9px);
+        right: 35px;
+        width: 16px;
+        height: 16px;
+        background-color: #fff;
+        transform: rotate(45deg);
+      }
+      &__inner {
+        padding: 10px 15px;
+      }
+      &__link {
+        display: flex;
+        position: relative;
+        left: 0;
+        transition: left ease .4s;
+        font-size: 14px;
+        color: $darkGrey;
+        &:hover {
+          left: 10px;
+          &::before {
+            left: -10px;
+            opacity: 1;
+          }
+        }
+        &::before {
+          content: "→";
+          transition: left ease .5s;
+          position:absolute;
+          top: 3px;
+          left:-15px;
+          opacity:0;
+          font-size: 20px;
+          line-height: 1;
+        }
+      }
+      .mCSB_scrollTools .mCSB_draggerContainer {
+        top: 10px;
+        bottom: 10px;
+      }
+      .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+        background-color: $accentColor;
+      }
+      .mCSB_scrollTools .mCSB_draggerRail {
+        width: 4px;
+        background-color: $greyColor;
+      }
+    }
   }
 }
 

@@ -52,17 +52,17 @@ let slider = document.getElementById('slider');
 let nouisliderInstance;
 
 function createSlider() {
-    nouisliderInstance = noUiSlider.create(slider, {
-        start: [4],
-        connect: true,
-        range: {
-            'min': 4,
-            'max': 6
-        },
-        step: 1,
-        direction: 'rtl',
-        connect:'upper',
-    });
+  nouisliderInstance = noUiSlider.create(slider, {
+      start: [4],
+      connect: true,
+      range: {
+          'min': 4,
+          'max': 6
+      },
+      step: 1,
+      direction: 'rtl',
+      connect:'upper',
+  });
 }
 
 function updateSliderRange(min, max) {
