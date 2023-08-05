@@ -426,6 +426,7 @@ $duration: map-get($elastic, 'duration');
   }
   &__language {
     position: relative;
+    display: inline-flex;
     color: $darkGrey;
     &-wrap {
       padding: 0 20px;
@@ -483,7 +484,7 @@ $duration: map-get($elastic, 'duration');
     &-dropdown {
       position: absolute;
       bottom: calc(100% + 10px);
-      right: -5px;
+      right: -30px;
       width: 150px;
       max-height: 250px;
       transform: translateY(-50px);
@@ -493,6 +494,7 @@ $duration: map-get($elastic, 'duration');
       border-radius: 20px;
       filter: drop-shadow(0px 4px 15px rgba(151, 173, 186, 0.25));
       pointer-events: none;
+      text-align: left;
       transition: transform .4s, visibility .4s, opacity .4s;
       &::before {
         content: '';
@@ -504,10 +506,10 @@ $duration: map-get($elastic, 'duration');
         background-color: #fff;
         transform: rotate(45deg);
       }
-      &__inner {
+      &-inner {
         padding: 10px 15px;
       }
-      &__link {
+      &-link {
         display: flex;
         position: relative;
         left: 0;

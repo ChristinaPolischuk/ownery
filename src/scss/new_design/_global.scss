@@ -218,6 +218,9 @@ svg.stroke {
   &:active {
     background-color: darken($accentColor, 15%);
   }
+  &--m {
+    padding: 0 58px;
+  }
   &--l {
     padding: 0 64px;
   }
@@ -954,12 +957,11 @@ svg.stroke {
 // ========================== [ Contact list styles ] ==========================
 .contact-list {
   display: flex;
+  justify-content: space-between;
   gap: 15px;
   &__item {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    text-align: center;
   }
   &__icon {
     margin: 0 auto 22px;

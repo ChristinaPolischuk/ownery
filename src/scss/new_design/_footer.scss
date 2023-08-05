@@ -22,11 +22,16 @@
     }
   }
   &__item {
-    flex: 1;
     @media (max-width: $breakpoint992) {
       page-break-inside: avoid;
       break-inside: avoid;
       margin-bottom: 30px;
+    }
+    &:not(:last-child) {
+      flex: 1.5;
+    }
+    &:last-child {
+      flex: 1;
     }
   }
   &__title {
@@ -85,7 +90,10 @@
     &-inner {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 33px;
+      @media (max-width: $breakpoint1200) {
+        gap: 15px;
+      }
       @media (max-width: $breakpoint768) {
         flex-direction: column;
       }
@@ -157,6 +165,8 @@
     display: inline-flex;
     align-items: center;
     color: #fff;
+    font-size: 16px;
+    font-weight: 500;
     &::before, &::after {
       content: '';
       position: absolute;
