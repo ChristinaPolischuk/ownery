@@ -1761,7 +1761,7 @@ svg.stroke {
   right: 0;
   bottom: 0;
   background: #EDF1FC;
-  z-index: 1;
+  z-index: 11;
   -webkit-transform: translateX(100%);
       -ms-transform: translateX(100%);
           transform: translateX(100%);

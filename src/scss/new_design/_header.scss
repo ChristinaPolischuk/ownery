@@ -391,7 +391,7 @@ $duration: map-get($elastic, 'duration');
     right: 0;
     bottom: 0;
     background: $accentColorLight;
-    z-index: 1;
+    z-index: 11;
     transform: translateX(100%);
     transition: transform 350ms;
     &.sub-open {
