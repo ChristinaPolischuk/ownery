@@ -296,6 +296,9 @@ $duration: map-get($elastic, 'duration');
     } @else if ($position == left) {
       left: 0;
     }
+    @media (max-width: $breakpoint480) {
+      width: 100%;
+    }
   }
   &__dropdown-inner {
     position: absolute;

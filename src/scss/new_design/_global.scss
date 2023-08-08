@@ -48,6 +48,9 @@ body {
           rgba(255, 255, 255, 0.8) 40%, 
           rgba(255, 255, 255, 0.1) 100% );
           z-index: 2;
+          @media (max-width: $breakpoint480) {
+            z-index: -1;
+          }
         }
     }
 }
@@ -55,7 +58,7 @@ body {
 a {
     color: inherit;
 }
-button {
+button, input {
     font-family: $fontMain;
 }
 
@@ -99,16 +102,14 @@ svg.stroke {
   }
 }
 .title {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   font-size: 40px;
   font-weight: 600;
   line-height: 1.43;
   @media (max-width: $breakpoint1200) {
-    margin-bottom: 10px;
     font-size: 36px;
   }
   @media (max-width: $breakpoint992) {
-    margin-bottom: 5px;
     font-size: 28px;
   }
   @media (max-width: $breakpoint576) {
@@ -135,7 +136,7 @@ svg.stroke {
     font-size: 18px;
   }
   @media (max-width: $breakpoint576) {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 .text-l {
@@ -174,10 +175,15 @@ svg.stroke {
 .description-m {
   font-size: 20px;
   font-weight: 500;
+  @media (max-width: $breakpoint576) {
+    line-height: normal;
+    font-size: 17px;
+  }
 }
 .description-s {
   font-size: 18px;
   font-weight: 500;
+  line-height: 1.2;
 }
 .description-l {
   font-size: 26px;
@@ -251,6 +257,11 @@ svg.stroke {
     display: inline-flex;
   }
 }
+.mobile-inline {
+  @media (max-width: $breakpoint576) {
+    display: inline;
+  }
+}
 
 // ========================== [ Search form styles ] ==========================
 .search-form {
@@ -301,11 +312,13 @@ svg.stroke {
     transition: border-color .3s;
     font-size: 20px;
     font-weight: 400;
+    color: $darkGrey;
     @media (max-width: $breakpoint1200) {
       height: 60px;
     }
     @media (max-width: $breakpoint992) {
       padding: 0 170px 0 20px;
+      font-size: 18px;
     }
     @media (max-width: $breakpoint480) {
       padding: 0 15px;
@@ -316,6 +329,11 @@ svg.stroke {
     }
     &::placeholder {
       color: $darkGrey;
+      font-size: 20px;
+      font-weight: 400;
+      @media (max-width: $breakpoint992) {
+        font-size: 18px;
+      }
     }
   }
   &__btn {
@@ -487,13 +505,13 @@ svg.stroke {
 }
 
 // ========================== [ Section styles ] ==========================
+* ~ .section__inner {
+  margin-top: 30px;
+}
 .section {
   padding: 120px 0;
   @media (max-width: $breakpoint1200) {
     padding: 60px 0;
-  }
-  @media (max-width: $breakpoint768) {
-    padding: 35px 0;
   }
   &--bg {
     background-color: $accentColorLight;
@@ -539,9 +557,7 @@ svg.stroke {
     gap: 30px;
     width: 55%;
     @media (max-width: $breakpoint1200) {
-      // order: 2;
       width: 100%;
-      gap: 15px;
     }
     @media (max-width: $breakpoint768) {
       order: 2;
@@ -580,6 +596,9 @@ svg.stroke {
       max-width: 495px;
       margin: 0 auto 30px;
     }
+    @media (max-width: $breakpoint480) {
+      text-align: center;
+    }
   }
   &__img-content {
     width: 60%;
@@ -610,8 +629,7 @@ svg.stroke {
   &-types {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
+    gap: 34px;
     width: 100%;
     @media (max-width: $breakpoint576) {
       justify-content: flex-start;
@@ -749,9 +767,15 @@ svg.stroke {
   }
   &-pic {
     width: 100%;
+    @media (max-width: $breakpoint480) {
+      width: 80%;
+    }
   }
   &-shaped {
     max-width: 100%;
+    @media (max-width: $breakpoint480) {
+      max-width: 80%;
+    }
   }
 }
 
@@ -769,13 +793,14 @@ svg.stroke {
   box-shadow: 0px 4px 20px 0px rgba(151, 173, 186, 0.25);
   @media (max-width: $breakpoint1200) {
     gap: 20px;
-    padding: 30px;
+    padding: 40px 25px;
   }
   @media (max-width: $breakpoint992) {
     flex-wrap: wrap;
   }
-  @media (max-width: $breakpoint768) {
-    padding: 15px;
+  @media (max-width: $breakpoint576) {
+    flex-direction: column;
+    align-items: flex-start;
   }
   &__img {
     width: 155px;
@@ -829,12 +854,6 @@ svg.stroke {
     margin-bottom: 15px;
   }
 }
-* ~ .checked-list {
-  margin-top: 30px;
-}
-.checked-list ~ * {
-  margin-top: 30px;
-}
 .checked-list {
   &__item {
     position: relative;
@@ -854,6 +873,9 @@ svg.stroke {
   }
   &__item + &__item {
     margin-top: 30px;
+    @media (max-width: $breakpoint768) {
+      margin-top: 15px;
+    }
   }
 }
 
@@ -904,6 +926,9 @@ svg.stroke {
     // }
   }
   &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     position: relative;
     max-width: 645px;
     width: 45%;
@@ -918,6 +943,7 @@ svg.stroke {
     @media (max-width: $breakpoint768) {
       width: 100%;
       max-width: 420px;
+      gap: 20px;
     }
     @media (max-width: $breakpoint576) {
       margin: 0 15px;
@@ -966,6 +992,7 @@ svg.stroke {
   &__item {
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
   &__icon {
     margin: 0 auto 22px;

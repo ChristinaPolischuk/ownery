@@ -25,7 +25,7 @@
     @media (max-width: $breakpoint992) {
       page-break-inside: avoid;
       break-inside: avoid;
-      margin-bottom: 30px;
+      margin-bottom: 70px;
     }
     &:not(:last-child) {
       flex: 1.5;
@@ -93,7 +93,7 @@
       align-items: center;
       gap: 33px;
       @media (max-width: $breakpoint1200) {
-        gap: 15px;
+        gap: 22px;
       }
       @media (max-width: $breakpoint768) {
         flex-direction: column;
@@ -105,7 +105,7 @@
     font-weight: 500;
     line-height: normal;
     @media (max-width: $breakpoint768) {
-      order: 2;
+      order: 3;
     }
   }
 }
@@ -144,6 +144,7 @@
 // ========================== [ Language styles ] ==========================
 .language {
   position: relative;
+  line-height: 1;
   @media (max-width: $breakpoint768) {
     order: 1;
   }
@@ -232,6 +233,9 @@
       transition: left ease .4s;
       font-size: 14px;
       color: $blackColor;
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
       &:hover {
         left: 10px;
         &::before {
