@@ -918,7 +918,6 @@ svg.stroke {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 40px;
   padding: 55px 40px;
   border-radius: 20px;
   background: #FFF;
@@ -927,13 +926,24 @@ svg.stroke {
 }
 
 .banner__img {
+  margin-right: 40px;
   width: 155px;
   height: 155px;
 }
 
 .banner__title {
+  margin-right: 75px;
+  margin-bottom: 0;
   max-width: 230px;
   word-wrap: break-word;
+}
+
+.banner__text {
+  margin-right: 57px;
+}
+
+.banner__btn {
+  width: 289px;
 }
 
 .icon-list__item {
@@ -944,7 +954,7 @@ svg.stroke {
 }
 
 .icon-list__item + .icon-list__item {
-  margin-top: 35px;
+  margin-top: 42px;
 }
 
 .icon-list__pic-wrapper {
@@ -2457,8 +2467,15 @@ svg.stroke {
   }
 
   .banner {
-    gap: 20px;
     padding: 40px 25px;
+  }
+
+  .banner__title {
+    margin-right: 40px;
+  }
+
+  .banner__text {
+    margin-right: 40px;
   }
 
   .card {
@@ -2603,11 +2620,18 @@ svg.stroke {
   }
 
   .banner {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 28px;
   }
 
   .banner__img {
+    margin-right: 0;
     width: 110px;
     height: 110px;
   }
@@ -2616,6 +2640,11 @@ svg.stroke {
     max-width: -webkit-max-content;
     max-width: -moz-max-content;
     max-width: max-content;
+    margin-right: 0;
+  }
+
+  .banner__text {
+    margin-right: 0;
   }
 
   .card {
@@ -2835,6 +2864,11 @@ svg.stroke {
 }
 
 @media (max-width: 575.98px) {
+  .logo__img {
+    width: 107px;
+    height: 30px;
+  }
+
   .title {
     font-size: 24px;
   }
@@ -2868,16 +2902,6 @@ svg.stroke {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-  }
-
-  .banner {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
   }
 
   .icon-list__pic-wrapper {
