@@ -209,8 +209,11 @@ svg.stroke {
   color: #0077CC;
 }
 
+.title ~ * {
+  margin-top: 15px;
+}
+
 .title {
-  margin-bottom: 30px;
   font-size: 40px;
   font-weight: 600;
   line-height: 1.43;
@@ -696,7 +699,7 @@ svg.stroke {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  gap: 85px;
+  gap: 75px;
 }
 
 .section__content {
@@ -712,6 +715,10 @@ svg.stroke {
           align-items: flex-start;
   gap: 30px;
   width: 55%;
+}
+
+.section__container-s {
+  max-width: 1110px;
 }
 
 .section__box {
@@ -753,7 +760,9 @@ svg.stroke {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 34px;
+  -webkit-column-gap: 34px;
+     -moz-column-gap: 34px;
+          column-gap: 34px;
   width: 100%;
 }
 
@@ -904,7 +913,7 @@ svg.stroke {
 }
 
 .img-shaped {
-  max-width: 100%;
+  width: 100%;
 }
 
 * ~ .banner {
@@ -934,7 +943,6 @@ svg.stroke {
 .banner__title {
   margin-right: 75px;
   margin-bottom: 0;
-  max-width: 230px;
   word-wrap: break-word;
 }
 
@@ -1007,6 +1015,10 @@ svg.stroke {
   margin-top: 30px;
 }
 
+.checked-list__item--s + .checked-list__item--s {
+  margin-top: 15px;
+}
+
 .card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1050,10 +1062,13 @@ svg.stroke {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 30px;
   position: relative;
   max-width: 645px;
-  width: 45%;
+  width: 50%;
   padding: 40px 55px;
   border-radius: 20px;
   background: #FFF;
@@ -2791,10 +2806,6 @@ svg.stroke {
     margin: 0 auto;
   }
 
-  .checked-list__item + .checked-list__item {
-    margin-top: 15px;
-  }
-
   .card {
     padding: 320px 0 0 0;
   }
@@ -2972,7 +2983,7 @@ svg.stroke {
   }
 
   .img-shaped {
-    max-width: 80%;
+    width: 80%;
   }
 
   .contact-list__icon {
